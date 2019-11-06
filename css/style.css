@@ -1,0 +1,591 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img{
+	image-orientation: from-image !important;
+/* image-orientation: none; */
+}
+
+/*		 Begin: 		*/
+html{
+	overflow-x:hidden;
+}
+.shadow{
+	-webkit-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.60);
+	-moz-box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.60);
+	box-shadow: 0px 5px 15px -5px rgba(0,0,0,0.60);
+}
+
+.lightShadow{
+	-webkit-box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.60);
+-moz-box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.60);
+box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.60);
+}
+
+.logoSect{
+	float: left;
+	height: 1.2em;
+	padding-left: 2.5%;
+}
+
+.logoSect figure{
+	float: left;
+}
+
+.logoSect img{
+	height: 1.2em;
+	vertical-align: middle;
+}
+
+.logoSect .title{
+	text-decoration: inherit;
+	font-family: 'Dancing Script';
+	font-size: 36pt;
+	float: left;
+	line-height: 1.2em;
+	color: #111;
+}
+
+header{
+	background: #f5abcbDD;
+	opacity: 1.0;
+	visibility: hidden;
+  position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 100;
+	height: auto;
+}
+
+.heroTint{
+	background: #252f253f;
+  position: absolute;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	min-height: 40em;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+
+nav{
+	float: right;
+	width: 37.5%;
+}
+
+nav ul li{
+	float: left;
+	width: 33.333%;
+	font-weight: bold;
+}
+
+nav ul li a{
+	color: #111;
+	text-align: center;
+	line-height: 3em;
+	font-size: 17pt;
+	font-variant: small-caps;
+	text-decoration: inherit;
+}
+
+nav ul li a:hover{
+	transition: 200ms;
+	color: #383838;
+}
+
+section{
+	width: 100%;
+	clear: both;
+}
+
+.container{
+	width: 100vw;
+	overflow: hidden;
+}
+
+main{
+	overflow: hidden;
+	z-index: -10;
+	/* TEMP:  */
+	/* height: 800vh; */
+}
+
+*{
+	font-family: "Kanit";
+	font-weight: light;
+}
+
+p{
+	font-size: 11pt;
+	line-height: 125%;
+}
+
+.top{
+	height: 100vh;
+	min-height: 40em;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: block;
+	align-items: center;
+	z-index: -10;
+}
+
+.top article{
+	margin: auto;
+	margin-top: 5%;
+	width: 85%;
+	color: #222;
+	text-align: center;
+}
+
+.background{
+	background-image: url("../img/back.jpg");
+	background-size: cover;
+	background-position: bottom;
+	background-color: #888;
+	position: absolute;
+	opacity: 0.4;
+	min-width: 100vw;
+	min-height: 100vh;
+	min-height: 50em;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -5;
+}
+
+.top article h1{
+	font-size: 26pt;
+	font-family: "Kanit";
+	font-weight: 600;
+	line-height: 200%;
+}
+.top article h1 span{
+	font-size: 36pt;
+	font-weight: 600;
+	font-family: 'Dancing Script';
+	color: #3C4725;
+}
+
+.top article p{
+	line-height: 150%;
+	font-size: 18pt;
+	font-weight: 600;
+	margin-bottom: 7.5%;
+}
+
+.top article a{
+	width: 9em;
+	display: block;
+	text-align: center;
+	background-color: #fbb2d2c0;
+	color: #131313;
+	border-radius: 0.875em;
+	padding: 1.25% 1.5%;
+	margin-right: 5%;
+	margin: auto;
+	text-decoration: inherit;
+	font-family: 'Kanit';
+	font-size: 17pt;
+	font-weight: bold;
+}
+
+.top article a:hover{
+  transition: 0.3s;
+	color: #989898;
+}
+
+.top figure{
+	padding-top: 10vh;
+	text-align: center;
+}
+
+.top figure img{
+
+	/* margin: auto; */
+	opacity: 0.95;
+	width: 50vw;
+	height: auto
+}
+
+.overlay{
+	opacity: 1.0;
+	background-color: #000800;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+
+.tris{
+	width: 100vw;
+	overflow: hidden;
+}
+
+.triSect{
+	background-color: #3C4725;
+	float: left;
+	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	transition: 400ms;
+}
+
+.triSect h1{
+	color: #FFF;
+	font-family: "Kanit";
+	text-align: left;
+	font-size: 2.75em;
+	margin-top: 4vw;
+}
+
+.triSect:hover{
+	box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.2);
+}
+
+#triSect1 h1{
+	padding-left: 5%;
+	padding-top: 20%;
+}
+
+#triSect2 h1{
+	margin-top: 3vw;
+	padding-top: 40vh;
+	font-size: 3vw;
+	text-align: center;
+	margin-left: -13%;
+}
+
+#triSect3 h1{
+	text-align: right;
+	padding-top: 20%;
+	padding-right: 5%;
+}
+
+#triSect1{
+	background: url("../img/0271.jpg");
+	background-size: cover;
+	background-position: left;
+  width: 50vw;
+  height: 74vh;
+  clip-path: polygon(0 0, 0 100%, 50% 100%, 100% 0%);
+}
+
+#triSect2{
+	margin-left: 24.9vw;
+	background: url("../img/comingsoon.jpg");
+	background-size: cover;
+  width: 58vw;
+  height: 74vh;
+	clip-path: polygon(100% 100%, 22vw 9vh, 0 100%);
+}
+
+#triSect3{
+	background: url("../img/Indoor1a.jpg");
+	background-size: cover;
+	background-position: left;
+  width: 52vw;
+	margin-left: 47vw;
+  height: 74vh;
+	clip-path: polygon(0 9vh, 33vw 100%, 100% 100%, 100% 0, 3vw 0);
+}
+
+.triSect .tint{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+
+#triSect1 .tint{
+	background-color: #3C47255F;
+}
+#triSect2 .tint{
+	background-color: #6666665F;
+}
+#triSect3 .tint{
+	background-color: #9E81705F;
+}
+
+.gallerySect{
+	background-color: #5E6b47bb;
+	overflow: hidden;
+	height: 74vh;
+	clear: both;
+}
+
+.gallerySect > h1{
+	font-family: "Dancing Script";
+	font-size: 4em;
+	background-color: #383838d8;
+	padding: 0.175em 0;
+	display: block;
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	text-align: center;
+	color: #EEEEEE;
+}
+
+.plants{
+	clear: both;
+	height: 0;
+	transition: 300ms;
+	color: #322;
+	overflow: hidden;
+}
+
+footer{
+	background-color: #5A2B3E;
+	padding: 2%;
+}
+
+footer img{
+	width: 30vw;
+	background-color: #6c3d50;
+	border-radius: 3%;
+	padding: 1%;
+	display: block;
+	margin: auto;
+}
+
+footer hr{
+	border: none;
+  height: 1px;
+	color: white;
+	background-color: white;
+}
+
+footer ul{
+	width: 60%;
+	margin: auto;
+	padding: 1%;
+}
+
+footer li{
+	display: inline-block;
+	width: calc(100%/3 - 0.75%);
+	text-align: center;
+}
+
+footer a{
+	color: #FFF;
+	text-decoration: none;
+	line-height: 2;
+	font-size: 16pt;
+	font-family: "Kanit";
+}
+
+/*
+ #F5ABCB
+ #3C4725
+ #CFC083
+ #9E8170
+ #5A2B3E
+*/
+.plants aside{
+	width: 27.5vw;
+	float: left;
+	padding: 1.5%;
+	height: 100%;
+}
+#indoorPlants aside{
+	background-color: #8fad4f;
+}
+#outdoorPlants aside{
+	background-color: #CFC083;
+}
+#illuminatedPlants aside{
+	background-color: #9E8170;
+}
+
+.plants aside h1{
+	font-size: 3.25em;
+}
+
+.plants aside hr{
+	border: none;
+  height: 2px;
+	color: #000;
+	z-index: 10;
+	background-color: #000;
+}
+
+.plants aside p{
+	font-size: 1.1em;
+}
+
+.grid{
+	line-height: 0;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+  flex-wrap: wrap;
+	justify-content: flex-end;
+  /* -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+	column-gap:           0px; */
+}
+.galleryImage{
+	/* width: 100% !important; */
+  height: 100%;
+	background-color: #000;
+	object-fit: cover;
+}
+
+
+ /* Responsive layout - makes a two column-layout instead of four columns */
+ @media screen and (max-width: 1080px) {
+ 	.plants aside h1{
+		font-size: 5vw;
+	}
+ }
+ 
+ @media screen and (max-width: 800px) {
+	 .plants aside{
+		 display: block;
+		 clear: both;
+		 width: 100%;
+		 height: auto;
+	 }
+	 
+	 .plants aside h1{
+		 font-size: 3.25em;
+	 }
+	 
+	 .top figure img{
+		 width: 80vw;
+	 }
+	 
+	#triSect1 h1{
+		margin-top: 15vh;
+	}
+	
+	#triSect2 h1{
+		/* margin-top: 15vh; */
+	}
+	
+	#triSect3 h1{
+		margin-top: 35vh;
+		
+	}
+	 
+	 #triSect1{
+	   width: 100%;
+	   height: 45vh;
+	   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+		 display: block;
+		 clear: both;
+	 }
+	 
+	 #triSect2{
+	 	margin-left: 0;
+	  width: 100%;
+	  height: 65vh;
+		clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+		display: block;
+		clear: both;
+		margin-top: calc(45vh+13.5vh+13.5vh);
+		margin-top: 45vh;
+	 }
+	 
+	 #triSect3{
+	  width: 100%;
+	 	margin-left: 0;
+	  height: 45vh;
+		clip-path: polygon(0 0, 100% 30%, 100% 90%, 0 100%);
+		display: block;
+		clear: both;
+		margin-top: calc(45vh - 13.5vh);
+		/* margin-top: 339vh; */
+	 }
+	 #triSect1 h1{
+	 	padding-left: 0;
+	 	padding-top: 0;
+	 }
+	 
+	 #triSect2 h1{
+	 	margin-top: 0;
+	 	padding-top: 0;
+	 	font-size: 0;
+	 	margin-left: 0;
+	 }
+	 
+	 #triSect3 h1{
+	 	padding-top: 0;
+	 	padding-right: 0;
+	 }
+	 .gallerySect{
+		 min-height: 100% !important;
+	 }
+ }
+
+ /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+ @media screen and (max-width: 600px) {
+	 .plants aside{
+		 display: block;
+		 clear: both;
+		 width: 100%;
+		 height: auto;
+	 }
+	 .top figure img{
+		 width: 90vw;
+	 }
+ }
