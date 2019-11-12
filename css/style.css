@@ -8,7 +8,7 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
+article, .heading, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-article, aside, details, figcaption, figure,
+article, .heading, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -87,7 +87,7 @@ box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.60);
 }
 
 header{
-	background: #f5abcbDD;
+	background: #f7739dE4;
 	opacity: 1.0;
 	visibility: hidden;
   position: fixed;
@@ -114,27 +114,28 @@ header{
 	z-index: -1;
 }
 
-nav{
+.TopNav{
 	float: right;
 	width: 37.5%;
 }
 
-nav ul li{
+.TopNav ul li{
 	float: left;
 	width: 33.333%;
 	font-weight: bold;
 }
 
-nav ul li a{
+.TopNav ul li a{
 	color: #111;
 	text-align: center;
 	line-height: 3em;
 	font-size: 17pt;
-	font-variant: small-caps;
+	font-variant: normal;
+	letter-spacing: 0.04em;
 	text-decoration: inherit;
 }
 
-nav ul li a:hover{
+.TopNav ul li a:hover{
 	transition: 200ms;
 	color: #383838;
 }
@@ -150,10 +151,10 @@ section{
 }
 
 main{
-	overflow: hidden;
+	/* overflow: hidden; */
 	z-index: -10;
 	/* TEMP:  */
-	/* height: 800vh; */
+	height: 800vh;
 }
 
 *{
@@ -174,6 +175,34 @@ p{
 	display: block;
 	align-items: center;
 	z-index: -10;
+}
+
+#FrontNav{
+	width: 40vw;
+	position: absolute;
+	top: 95vh;
+	left:30vw;
+	margin: auto;
+	clear: both;
+	height: auto;
+}
+#FrontNav li{
+	float: left;
+	width: 30%;
+	text-align: center;
+}
+#FrontNav a{
+	color: #FFF;
+	text-shadow: 0.05em 0.05em #3C4725;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	text-decoration: underline;
+	font-variant: normal;
+	font-size: 1.2em;
+}
+#FrontNav a:hover{
+	color: #3C4725;
+	transition: 200ms;
 }
 
 .top article{
@@ -225,9 +254,9 @@ p{
 	width: 9em;
 	display: block;
 	text-align: center;
-	background-color: #fbb2d2c0;
+	background-color: #f7739dD0;
 	color: #131313;
-	border-radius: 0.875em;
+	border-radius: 0.675em;
 	padding: 1.25% 1.5%;
 	margin-right: 5%;
 	margin: auto;
@@ -381,12 +410,20 @@ p{
 	color: #EEEEEE;
 }
 
-.plants{
+#slider{
+	height: 75vh;
+	width: 300vw;
 	clear: both;
-	height: 0;
+}
+
+.plants{
+	height: 100%;
 	transition: 300ms;
+	float: left;
+	width: 100vw;
 	color: #322;
 	overflow: hidden;
+	display: block;
 }
 
 footer{
@@ -437,36 +474,48 @@ footer a{
  #9E8170
  #5A2B3E
 */
-.plants aside{
-	width: 27.5vw;
+.headings{
+	clear: both;
+}
+.headings h1{
+	width: 33.33%;
+	text-align: center;
+	display: block;
 	float: left;
-	padding: 1.5%;
-	height: 100%;
+	padding: 1.5% 0;
 }
-#indoorPlants aside{
-	background-color: #8fad4f;
+#HeadingIndoor{
+	background-color: #8fad4fDD;
+	color: #222222;
 }
-#outdoorPlants aside{
-	background-color: #CFC083;
+#HeadingOutdoor{
+	background-color: #CFC083DD;
+	color: #222222;
 }
-#illuminatedPlants aside{
-	background-color: #9E8170;
-}
-
-.plants aside h1{
-	font-size: 3.25em;
+#HeadingMacrame{
+	background-color: #9E8170DD;
+	color: #222222;
 }
 
-.plants aside hr{
-	border: none;
-  height: 2px;
-	color: #000;
-	z-index: 10;
-	background-color: #000;
+#HeadingIndoor:hover{
+	color: #000000;
+	background-color: #8fad4fFF;
+}
+#HeadingOutdoor:hover{
+	color: #000000;
+	background-color: #CFC083FF;
+}
+#HeadingMacrame:hover{
+	color: #000000;
+	background-color: #9E8170FF;
 }
 
-.plants aside p{
-	font-size: 1.1em;
+.headings h1{
+	font-size: 1.75em;
+}
+
+.galleryDesc p{
+	font-size: 0.95em;
 }
 
 .grid{
@@ -485,7 +534,7 @@ footer a{
 }
 .galleryImage{
 	/* width: 100% !important; */
-  height: 100%;
+	height: 100%;
 	background-color: #000;
 	object-fit: cover;
 }
@@ -493,20 +542,20 @@ footer a{
 
  /* Responsive layout - makes a two column-layout instead of four columns */
  @media screen and (max-width: 1080px) {
- 	.plants aside h1{
+ 	.plants .heading h1{
 		font-size: 5vw;
 	}
  }
  
  @media screen and (max-width: 800px) {
-	 .plants aside{
+	 .plants .heading{
 		 display: block;
 		 clear: both;
 		 width: 100%;
 		 height: auto;
 	 }
 	 
-	 .plants aside h1{
+	 .plants .heading h1{
 		 font-size: 3.25em;
 	 }
 	 
@@ -519,7 +568,7 @@ footer a{
 	}
 	
 	#triSect2 h1{
-		/* margin-top: 15vh; */
+		margin-top: 55vh;
 	}
 	
 	#triSect3 h1{
@@ -572,14 +621,11 @@ footer a{
 	 	padding-top: 0;
 	 	padding-right: 0;
 	 }
-	 .gallerySect{
-		 min-height: 100% !important;
-	 }
  }
 
  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
  @media screen and (max-width: 600px) {
-	 .plants aside{
+	 .plants .heading{
 		 display: block;
 		 clear: both;
 		 width: 100%;
