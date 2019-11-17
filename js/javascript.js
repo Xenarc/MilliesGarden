@@ -29,14 +29,14 @@ $(function()
     $(".gallerySect > h1").hide();
   }
   
-  Resize();
   Mobile = $(window).width() <= 800;
+  Resize();
   $("#HeadingIndoor").click(function(){
     SelectedPlantType = 1;
     UpdateSelectedPlantType();
   });
   
-  $("#HeadingMacrame").click(function(){
+  $("#HeadingSpecials").click(function(){
     SelectedPlantType = 2;
     UpdateSelectedPlantType();
   });
@@ -89,16 +89,15 @@ function Resize(){
   Mobile = $(window).width() <= 800;
   var cols = Math.floor($(window).width()*0.004);
   cols = cols > 5 ? 5 : cols;
-  const rows = {
-    1:2,
-    2:2,
-    3:3,
-    4:3,
-    5:4
-  }
+  const rows = {1:2,
+                2:2,
+                3:3,
+                4:3,
+                5:4}
   
   $(".galleryImage").css("width",(1/cols)*100+"%");
-  $(".galleryImage").css("height",PlantTypeHeightVH/rows[cols]+"vh");
+  $(".galleryImage").css("height",(PlantTypeHeightVH-(100*$(".GalleryDesc").height())/$(window).height())/rows[cols]+"vh");
+  console.log("Resize " + $(".galleryImage").height());
 }
 
 function UpdateSelectedPlantType(){

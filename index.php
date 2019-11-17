@@ -71,54 +71,30 @@
 							<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>
 						<div class="grid">
-							<img class="galleryImage" src="./img/017.jpg">
-							<img class="galleryImage" src="./img/019.jpg">
-							<img class="galleryImage" src="./img/023.jpg">
-							<img class="galleryImage" src="./img/029.jpg">
-							<img class="galleryImage" src="./img/043.jpg">
-							<img class="galleryImage" src="./img/0495.jpg">
-							<img class="galleryImage" src="./img/0525.jpg">
-							<img class="galleryImage" src="./img/053.jpg">
-							<img class="galleryImage" src="./img/055.jpg">
-							<img class="galleryImage" src="./img/057.jpg">
-							<img class="galleryImage" src="./img/061.jpg">
-							<img class="galleryImage" src="./img/065.jpg">
-							<img class="galleryImage" src="./img/0695.jpg">
-							<img class="galleryImage" src="./img/071.jpg">
-							<img class="galleryImage" src="./img/075.jpg">
-							<img class="galleryImage" src="./img/081.jpg">
-							<img class="galleryImage" src="./img/083.jpg">
-							<img class="galleryImage" src="./img/085.jpg">
+							<?php
+									$IndoorPlantFiles = scandir('img/Indoor/');
+									foreach($IndoorPlantFiles as $photo) {
+											if($photo !== "." && $photo !== "..") {
+													echo '<img class="galleryImage" src="./img/Indoor/'.$photo.'" />';
+											}
+									}
+							?>
 						</div>
 					</div>
 					<div id="Specials" class="plants">
 						<div class="GalleryDesc">
-							<p>macrameLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>
 						<div class="grid">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
-								<img class="galleryImage" src="./img/0.jpg">
+							<?php
+									$CurrentSpecial = "Christmas"; // Christmas, General, Macrame, Mothersday
+									$IndoorPlantFiles = scandir('img/Specials/');
+									foreach($IndoorPlantFiles as $photo) {
+											if($photo !== "." && $photo !== "..") {
+													echo '<img class="galleryImage" src="./img/Specials/'.$photo.'" />';
+											}
+									}
+							?>
 						</div>
 					</div>
 					<div id="outdoorPlants" class="plants">
@@ -126,27 +102,20 @@
 							<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>
 						<div class="grid">
-							<img class="galleryImage" src="./img/007.jpg">
-							<img class="galleryImage" src="./img/009.jpg">
-							<img class="galleryImage" src="./img/014.jpg">
-							<img class="galleryImage" src="./img/021.jpg">
-							<img class="galleryImage" src="./img/033.jpg">
-							<img class="galleryImage" src="./img/035.jpg">
-							<img class="galleryImage" src="./img/039.jpg">
-							<img class="galleryImage" src="./img/059.jpg">
-							<img class="galleryImage" src="./img/063.jpg">
-							<img class="galleryImage" src="./img/067.jpg">
-							<img class="galleryImage" src="./img/091.jpg">
-							<img class="galleryImage" src="./img/093.jpg">
-							<img class="galleryImage" src="./img/099.jpg">
-							<img class="galleryImage" src="./img/103.jpg">
-							<img class="galleryImage" src="./img/111.jpg">
+							<?php
+									$IndoorPlantFiles = scandir('img/Outdoor/');
+									foreach($IndoorPlantFiles as $photo) {
+											if($photo !== "." && $photo !== "..") {
+													echo '<img class="galleryImage" src="./img/Outdoor/'.$photo.'" />';
+											}
+									}
+							?>
 						</div>
 					</div>
 				</div>
 				<div class="headings">
 						<h1 id="HeadingIndoor">Indoor Plants</h1>
-						<h1 id="HeadingMacrame">Specials</h1>
+						<h1 id="HeadingSpecials">Specials</h1>
 						<h1 id="HeadingOutdoor">Outdoor Plants</h1>
 					</div>
 				<div class="order">

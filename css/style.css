@@ -414,6 +414,7 @@ p{
 	height: 75vh;
 	width: 300vw;
 	clear: both;
+	overflow:hidden;
 }
 
 .plants{
@@ -492,7 +493,7 @@ footer a{
 	background-color: #CFC083DD;
 	color: #222222;
 }
-#HeadingMacrame{
+#HeadingSpecials{
 	background-color: #9E8170DD;
 	color: #222222;
 }
@@ -505,7 +506,7 @@ footer a{
 	color: #000000;
 	background-color: #CFC083FF;
 }
-#HeadingMacrame:hover{
+#HeadingSpecials:hover{
 	color: #000000;
 	background-color: #9E8170FF;
 }
@@ -525,20 +526,12 @@ footer a{
 	display: flex;
   flex-wrap: wrap;
 	justify-content: flex-end;
-  /* -webkit-column-count: 5;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    5;
-  -moz-column-gap:      0px;
-  column-count:         5;
-	column-gap:           0px; */
-}
-.galleryImage{
-	/* width: 100% !important; */
-	height: 100%;
-	background-color: #000;
-	object-fit: cover;
 }
 
+.galleryImage{
+	height: 100%;
+	object-fit: cover;
+}
 
  /* Responsive layout - makes a two column-layout instead of four columns */
  @media screen and (max-width: 1080px) {
