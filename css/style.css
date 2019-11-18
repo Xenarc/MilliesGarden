@@ -515,7 +515,11 @@ footer a{
 	font-size: 1.75em;
 }
 
-.galleryDesc p{
+.GalleryDesc{
+	height: 12vh;
+}
+
+.GalleryDesc p{
 	font-size: 0.95em;
 }
 
@@ -541,17 +545,6 @@ footer a{
  }
  
  @media screen and (max-width: 800px) {
-	 .plants .heading{
-		 display: block;
-		 clear: both;
-		 width: 100%;
-		 height: auto;
-	 }
-	 
-	 .plants .heading h1{
-		 font-size: 3.25em;
-	 }
-	 
 	 .top figure img{
 		 width: 80vw;
 	 }
