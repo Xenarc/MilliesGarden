@@ -90,7 +90,7 @@ header{
 	background: #f7739dE4;
 	opacity: 1.0;
 	visibility: hidden;
-  position: fixed;
+	position: fixed;
 	overflow: hidden;
 	top: 0;
 	left: 0;
@@ -102,7 +102,7 @@ header{
 
 .heroTint{
 	background: #252f253f;
-  position: absolute;
+	position: absolute;
 	overflow: hidden;
 	width: 100vw;
 	height: 100vh;
@@ -267,7 +267,7 @@ p{
 }
 
 .top article a:hover{
-  transition: 0.3s;
+	transition: 0.3s;
 	color: #989898;
 }
 
@@ -294,7 +294,6 @@ p{
 	width: 100vw;
 	height: 100vh;
 }
-
 
 .tris{
 	width: 100vw;
@@ -332,7 +331,6 @@ p{
 #triSect2 h1{
 	margin-top: 10vh;
 	padding-top: 40vh;
-	font-size: 4vw;
 	text-align: center;
 	margin-left: -13%;
 }
@@ -347,17 +345,17 @@ p{
 	background: url("../img/0271.jpg");
 	background-size: cover;
 	background-position: left;
-  width: 50vw;
-  height: 74vh;
-  clip-path: polygon(0 0, 0 100%, 50% 100%, 100% 0%);
+	width: 50vw;
+	height: 74vh;
+	clip-path: polygon(0 0, 0 100%, 50% 100%, 100% 0%);
 }
 
 #triSect2{
 	margin-left: 24.9vw;
 	background: url("../img/comingsoon.jpg");
 	background-size: cover;
-  width: 58vw;
-  height: 74vh;
+	width: 58vw;
+	height: 74vh;
 	clip-path: polygon(100% 100%, 22vw 9vh, 0 100%);
 }
 
@@ -365,9 +363,9 @@ p{
 	background: url("../img/Indoor1a.jpg");
 	background-size: cover;
 	background-position: left;
-  width: 52vw;
+	width: 52vw;
 	margin-left: 47vw;
-  height: 74vh;
+	height: 74vh;
 	clip-path: polygon(0 9vh, 33vw 100%, 100% 100%, 100% 0, 3vw 0);
 }
 
@@ -443,7 +441,7 @@ footer img{
 
 footer hr{
 	border: none;
-  height: 1px;
+	height: 1px;
 	color: white;
 	background-color: white;
 }
@@ -469,11 +467,11 @@ footer a{
 }
 
 /*
- #F5ABCB
- #3C4725
- #CFC083
- #9E8170
- #5A2B3E
+#F5ABCB
+#3C4725
+#CFC083
+#9E8170
+#5A2B3E
 */
 .headings{
 	clear: both;
@@ -516,7 +514,8 @@ footer a{
 }
 
 .GalleryDesc{
-	height: 12vh;
+	/* height: 12vh;	 */
+	/* TODO: FIXME:  */
 }
 
 .GalleryDesc p{
@@ -525,10 +524,11 @@ footer a{
 
 .grid{
 	line-height: 0;
+	height: 100%;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 	justify-content: flex-end;
 }
 
@@ -537,84 +537,89 @@ footer a{
 	object-fit: cover;
 }
 
- /* Responsive layout - makes a two column-layout instead of four columns */
- @media screen and (max-width: 1080px) {
- 	.plants .heading h1{
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1080px) {
+	.plants .heading h1{
 		font-size: 5vw;
+	}
+	
+	#triSect2 h1{
+		font-size: 4vw;
 	}
  }
  
  @media screen and (max-width: 800px) {
 	
-	 .top figure img{
-		 width: 80vw;
-	 }
+	.top figure img{
+		width: 80vw;
+	}
 	.gallerySect{
 		height: 110vh;
 	}
-	 
-	 #triSect1{
-	   width: 100%;
-	   height: 45vh;
-	   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
-		 display: block;
-		 clear: both;
-	 }
-	 
-	 #triSect2{
-	 	margin-left: 0;
-	  width: 100%;
-	  height: 65vh;
+	
+	#triSect1{
+		width: 100%;
+		height: 45vh;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+		display: block;
+		clear: both;
+	}
+	
+	#triSect2{
+		margin-left: 0;
+		width: 100%;
+		height: 65vh;
 		clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
 		display: block;
 		clear: both;
 		margin-top: 45vh;
-	 }
-	 
-	 #triSect3{
-	  width: 100%;
-	 	margin-left: 0;
-	  height: 45vh;
+	}
+	
+	#triSect3{
+		width: 100%;
+		margin-left: 0;
+		height: 45vh;
 		clip-path: polygon(0 0, 100% 30%, 100% 90%, 0 100%);
 		display: block;
 		clear: both;
 		margin-top: calc(45vh - 13.5vh);
-	 }
-	 
-	 #triSect1 h1{
+	}
+	
+	#triSect1 h1{
 		padding-left: 4vw;
-	 	padding-top: 0;
+		padding-top: 0;
 		margin-top: 13vh;
 		text-align: left;
 		margin-left: 1%;
-	 }
-	 
-	 #triSect2 h1{
-	 	margin-top: 44vh;
-		 padding-top: 0;
-	 	padding-left: 4vw;
-		 text-align: left;
-	 	font-size: 2.75em;
-	 	margin-left: 0;
-	 }
-	 
-	 #triSect3 h1{
+	}
+	
+	#triSect2 h1{
+		margin-top: 44vh;
+		padding-top: 0;
+		padding-left: 4vw;
+		text-align: left;
+		font-size: 2.75em;
+		margin-left: 0;
+	}
+	
+	#triSect3 h1{
 		padding-top: 0;
 		padding-right: 4vw;
 		margin-top: 24vh;
-	 }
 	}
- }
+}
 
- /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
- @media screen and (max-width: 600px) {
-	 .plants .heading{
-		 display: block;
-		 clear: both;
-		 width: 100%;
-		 height: auto;
-	 }
-	 .top figure img{
-		 width: 90vw;
-	 }
- }
+@media screen and (max-width: 650px) {
+	.plants .heading{
+		display: block;
+		clear: both;
+		width: 100%;
+		height: auto;
+	}
+	.top figure img{
+		width: 90vw;
+	}
+	.GalleryDesc{
+		/* height: 20vh; */
+	}
+}
