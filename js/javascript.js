@@ -23,7 +23,7 @@ $(function()
   });
   if(!galleryButton){
     $(".gallery").hide();
-    $(".top article").css("margin-top", "7%");
+    $(".top article").css("margin-top", "6%");
   }
   if(!galleryBanner){
     $(".gallerySect > h1").hide();
@@ -97,9 +97,6 @@ function Resize(){
   
   $(".galleryImage").css("width",(1/cols)*100+"%");
   $(".galleryImage").css("height",(PlantTypeHeightVH-(100*$(".GalleryDesc").height())/$(window).height())/rows[cols]+"vh");
-  console.log("Resize GalleryDesc " + $(".GalleryDesc").height());
-  console.log("Resize windowHeight " + $(window).height());
-  console.log("Resize galleryImage " + $(".galleryImage").height());
 }
 
 function UpdateSelectedPlantType(){
