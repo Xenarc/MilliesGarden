@@ -65,10 +65,15 @@
 						</div>
 					</div>
 				</section>
+				<div class="headings">
+					<h1 id="HeadingIndoor">Indoor Plants</h1>
+					<h1 id="HeadingSpecials">Specials</h1>
+					<h1 id="HeadingOutdoor">Outdoor Plants</h1>
+				</div>
 				<div id="slider">
 					<div id="indoorPlants" class="plants">
 						<div class="GalleryDesc">
-							<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 						</div>
 						<div class="grid">
 							<?php
@@ -83,7 +88,7 @@
 					</div>
 					<div id="Specials" class="plants">
 						<div class="GalleryDesc">
-							<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 						</div>
 						<div class="grid">
 							<?php
@@ -99,7 +104,7 @@
 					</div>
 					<div id="outdoorPlants" class="plants">
 						<div class="GalleryDesc">
-							<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 						</div>
 						<div class="grid">
 							<?php
@@ -113,11 +118,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="headings">
-						<h1 id="HeadingIndoor">Indoor Plants</h1>
-						<h1 id="HeadingSpecials">Specials</h1>
-						<h1 id="HeadingOutdoor">Outdoor Plants</h1>
-					</div>
 				<div class="order">
 					
 				</div>

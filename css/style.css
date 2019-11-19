@@ -425,6 +425,24 @@ p{
 	display: block;
 }
 
+.GalleryDesc p{
+	font-size: 0.95em;
+	padding: 1%;
+	line-height: 1.3;
+}
+
+#indoorPlants .GalleryDesc{
+	background-color: #CFC083DD;
+}
+
+#Specials .GalleryDesc{
+	background-color: #9E8170DD;
+}
+
+#outdoorPlants .GalleryDesc{
+	background-color: #8fad4fDD;
+}
+
 footer{
 	background-color: #5A2B3E;
 	padding: 2%;
@@ -492,30 +510,32 @@ footer a{
 	font-size: 1.75em;
 	color: #222222;
 }
+
 #HeadingIndoor{
-	background-color: #8fad4fDD;
-}
-#HeadingOutdoor{
 	background-color: #CFC083DD;
 }
+
+#HeadingOutdoor{
+	background-color: #8fad4fDD;
+}
+
 #HeadingSpecials{
 	background-color: #9E8170DD;
 }
 .headings:hover{
 	color: #000000;
 }
+
 #HeadingIndoor:hover{
 	background-color: #8fad4fFF;
 }
+
 #HeadingOutdoor:hover{
 	background-color: #CFC083FF;
 }
+
 #HeadingSpecials:hover{
 	background-color: #9E8170FF;
-}
-
-.GalleryDesc p{
-	font-size: 0.95em;
 }
 
 .grid{

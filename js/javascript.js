@@ -101,6 +101,7 @@ function Resize(){
 }
 
 function UpdateSelectedPlantType(){
+	if (Mobile) return;
 	switch (SelectedPlantType) {
 		case 0:
 			break;
