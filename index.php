@@ -23,9 +23,9 @@
 				</div>
 				<nav class="TopNav">
 					<ul>
-						<li><a href=""><h3>Home</h3></a></li>
 						<li><a href=""><h3>Gallery</h3></a></li>
 						<li><a href=""><h3>Order</h3></a></li>
+						<li><a href=""><h3>Contact</h3></a></li>
 					</ul>
 				</nav>
 			</header>
@@ -42,12 +42,12 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 							<a href="#gallerySect" class="gallery lightShadow">View Gallery</a>
 						</article>
-						<nav id="FrontNav"><ul>
+				</section>
+				<nav id="FrontNav"><ul>
 							<li><a href="">Gallery</a></li>
 							<li><a href="">Order</a></li>
 							<li><a href="">Contact</a></li>
 						</ul></nav>
-				</section>
 				<section class="gallerySect">
 					<h1 class="lightShadow">Gallery</h1>
 					<div class="tris">

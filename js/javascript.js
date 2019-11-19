@@ -4,7 +4,6 @@ var SelectedPlantType = -1;
 //  2 = Macrame
 //  3 = Outdoor
 
-var PlantTypeHeightVH = 75;
 var AnimationTime = 300;
 var Mobile = false;
 var galleryButton = false;
@@ -87,16 +86,17 @@ $(function()
 
 function Resize(){
 	Mobile = $(window).width() <= 800;
+	
+	PlantTypeHeightVH =  $(window).width() <= 690 ? 110 : 75;
 	var cols = Math.floor($(window).width()*0.004);
 	cols = cols > 5 ? 5 : cols;
-	const rows = {1:2,
+	const rows = {1:3,
 								2:2,
 								3:3,
 								4:3,
 								5:4}
 	
 	$(".galleryImage").css("width",(1/cols)*100+"%");
-	var HeightOfGridVH = 100*($("#slider").height()-$(".GalleryDesc").height())/$(window).height();
 	$(".galleryImage").css("height",(PlantTypeHeightVH-(100*$(".GalleryDesc").height())/$(window).height())/rows[cols]+"vh");
 }
 
