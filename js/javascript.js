@@ -96,8 +96,8 @@ function Resize(){
 								5:4}
 	
 	$(".galleryImage").css("width",(1/cols)*100+"%");
-	$(".galleryImage").css("height",(PlantTypeHeightVH-(100*($(".GalleryDesc").height()-$(".GalleryDesc p").height()))/$(window).height())/rows[cols]+"vh");
-	// $(".galleryImage").css("height",(PlantTypeHeightVH-(100*$(".grid").height())/$(window).height())/rows[cols]+"vh");  
+	var HeightOfGridVH = 100*($("#slider").height()-$(".GalleryDesc").height())/$(window).height();
+	$(".galleryImage").css("height",(PlantTypeHeightVH-(100*$(".GalleryDesc").height())/$(window).height())/rows[cols]+"vh");
 }
 
 function UpdateSelectedPlantType(){

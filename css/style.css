@@ -473,49 +473,45 @@ footer a{
 #9E8170
 #5A2B3E
 */
+
 .headings{
-	clear: both;
+	width: 100%;
+	display:table;
 }
+
 .headings h1{
-	width: 33.33%;
+	margin:0;
+	padding:0;
+	vertical-align:middle; /*middle centred*/
+	display:table-cell; /*acts like a table cell*/
+	
+	width: calc(33.333333% - 0.4em);
 	text-align: center;
-	display: block;
 	float: left;
-	padding: 1.5% 0;
+	padding: 0.4em 0.2em;
+	font-size: 1.75em;
+	color: #222222;
 }
 #HeadingIndoor{
 	background-color: #8fad4fDD;
-	color: #222222;
 }
 #HeadingOutdoor{
 	background-color: #CFC083DD;
-	color: #222222;
 }
 #HeadingSpecials{
 	background-color: #9E8170DD;
-	color: #222222;
 }
-
-#HeadingIndoor:hover{
+.headings:hover{
 	color: #000000;
+}
+#HeadingIndoor:hover{
 	background-color: #8fad4fFF;
 }
 #HeadingOutdoor:hover{
-	color: #000000;
 	background-color: #CFC083FF;
 }
 #HeadingSpecials:hover{
-	color: #000000;
 	background-color: #9E8170FF;
-}
-
-.headings h1{
-	font-size: 1.75em;
-}
-
-.GalleryDesc{
-	/* height: 12vh;	 */
-	/* TODO: FIXME:  */
 }
 
 .GalleryDesc p{
@@ -609,7 +605,7 @@ footer a{
 	}
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 690px) {
 	.plants .heading{
 		display: block;
 		clear: both;
@@ -619,7 +615,8 @@ footer a{
 	.top figure img{
 		width: 90vw;
 	}
-	.GalleryDesc{
-		/* height: 20vh; */
+	
+	.headings{
+		display: none;
 	}
 }
