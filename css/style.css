@@ -426,20 +426,21 @@ p{
 }
 
 .GalleryDesc p{
+	clear: both;
 	font-size: 0.95em;
 	padding: 1%;
 	line-height: 1.3;
 }
 
-#indoorPlants .GalleryDesc{
+#IndoorTab .GalleryDesc{
 	background-color: #CFC083DD;
 }
 
-#Specials .GalleryDesc{
+#SpecialsTab .GalleryDesc{
 	background-color: #9E8170DD;
 }
 
-#outdoorPlants .GalleryDesc{
+#OutdoorTab .GalleryDesc{
 	background-color: #8fad4fDD;
 }
 
@@ -494,36 +495,60 @@ footer a{
 
 .headings{
 	width: 100%;
-	display:table;
+	display: block;
+	height: fit-content;
+	position: relative;
+}
+
+.headings:hover{
+	color: #000000;
+}
+
+.tab{
+	/* position: absolute; top: 0; left: 0; */
+	position: relative;
+	float: left;
 }
 
 .headings h1{
 	margin:0;
 	padding:0;
-	vertical-align:middle; /*middle centred*/
-	display:table-cell; /*acts like a table cell*/
-	
+	vertical-align:middle;
+	display:table-cell;
 	width: calc(33.333333% - 0.4em);
 	text-align: center;
 	float: left;
-	padding: 0.4em 0.2em;
+	padding: 0 0.2em;
 	font-size: 1.75em;
+	line-height: 1.75;
 	color: #222222;
 }
 
-#HeadingIndoor{
+#IndoorTab{
 	background-color: #CFC083DD;
+	clip-path: polygon(0 0, 33.33333% 0, 33.33333% 3.5em, 100% 3.5em, 100% 100%, 0 100%);
 }
 
-#HeadingOutdoor{
-	background-color: #8fad4fDD;
-}
-
-#HeadingSpecials{
+#SpecialsTab{
 	background-color: #9E8170DD;
+	clip-path: polygon(0 3.5em, 33.33333% 3.5em, 33.33333% 0, 66.66667% 0, 66.66667% 3.5em, 100% 3.5em, 100% 100%, 0 100%);
 }
-.headings:hover{
-	color: #000000;
+
+#OutdoorTab{
+	background-color: #8fad4fDD;
+	clip-path: polygon(0 3.5em, 66.66667% 3.5em, 66.66667% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#IndoorTab h1{
+	margin-left: 0%;
+}
+
+#SpecialsTab h1{
+	margin-left: 33.333333%;
+}
+
+#OutdoorTab h1{
+	margin-left: 66.666667%;
 }
 
 #HeadingIndoor:hover{

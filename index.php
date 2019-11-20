@@ -34,20 +34,21 @@
 			<!-- <img src="img/back.jpg" class="background" alt="background"> -->
 			<main>
 				<section class="top">
-						<figure>
-							<img src="img/img1.png" alt="Logo">
-						</figure>
-						<article>
-							<h1>Welcome to <span>Millie's Garden</span></h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-							<a href="#gallerySect" class="gallery lightShadow">View Gallery</a>
-						</article>
+					<figure>
+						<img src="img/img1.png" alt="Logo">
+					</figure>
+					<article>
+						<h1>Welcome to <span>Millie's Garden</span></h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+						<a href="#gallerySect" class="gallery lightShadow">View Gallery</a>
+					</article>
 				</section>
 				<nav id="FrontNav"><ul>
-							<li><a href="">Gallery</a></li>
-							<li><a href="">Order</a></li>
-							<li><a href="">Contact</a></li>
-						</ul></nav>
+						<li><a href="">Gallery</a></li>
+						<li><a href="">Order</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</nav>
 				<section class="gallerySect">
 					<h1 class="lightShadow">Gallery</h1>
 					<div class="tris">
@@ -66,15 +67,27 @@
 					</div>
 				</section>
 				<div class="headings">
-					<h1 id="HeadingIndoor">Indoor Plants</h1>
-					<h1 id="HeadingSpecials">Specials</h1>
-					<h1 id="HeadingOutdoor">Outdoor Plants</h1>
-				</div>
-				<div id="slider">
-					<div id="indoorPlants" class="plants">
+					<div class="tab" id="IndoorTab">
+						<h1>Indoor Plants</h1>
 						<div class="GalleryDesc">
 							<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 						</div>
+					</div>
+					<div class="tab" id="SpecialsTab">
+						<h1>Specials</h1>
+						<div class="GalleryDesc">
+							<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+					<div class="tab" id="OutdoorTab">
+						<h1>Outdoor Plants</h1>
+						<div class="GalleryDesc">
+							<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+				</div>
+				<div id="slider">
+					<div id="indoorPlants" class="plants">
 						<div class="grid">
 							<?php
 									$IndoorPlantFiles = scandir('img/Indoor/');
@@ -87,9 +100,6 @@
 						</div>
 					</div>
 					<div id="Specials" class="plants">
-						<div class="GalleryDesc">
-							<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						</div>
 						<div class="grid">
 							<?php
 									$CurrentSpecial = "Christmas"; // Christmas, General, Macrame, Mothersday
@@ -103,9 +113,6 @@
 						</div>
 					</div>
 					<div id="outdoorPlants" class="plants">
-						<div class="GalleryDesc">
-							<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						</div>
 						<div class="grid">
 							<?php
 									$IndoorPlantFiles = scandir('img/Outdoor/');

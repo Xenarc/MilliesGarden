@@ -30,17 +30,18 @@ $(function()
 	
 	Mobile = $(window).width() <= 800;
 	Resize();
-	$("#HeadingIndoor").click(function(){
+	
+	$("#IndoorTab").click(function(){
 		SelectedPlantType = 1;
 		UpdateSelectedPlantType();
 	});
 	
-	$("#HeadingSpecials").click(function(){
+	$("#SpecialsTab").click(function(){
 		SelectedPlantType = 2;
 		UpdateSelectedPlantType();
 	});
 	
-	$("#HeadingOutdoor").click(function(){
+	$("#OutdoorTab").click(function(){
 		SelectedPlantType = 3;
 		UpdateSelectedPlantType();
 	});
@@ -97,10 +98,14 @@ function Resize(){
 								5:4}
 	
 	$(".galleryImage").css("width",(1/cols)*100+"%");
-	$(".galleryImage").css("height",(PlantTypeHeightVH-(100*$(".GalleryDesc").height())/$(window).height())/rows[cols]+"vh");
+	$(".galleryImage").css("height",PlantTypeHeightVH / rows[cols] + "vh");
+	console.log($("#indoorPlants").height() + "px");
+	$("#SpecialsTab").css("margin-top", -$("#IndoorTab").height() + "px");
+	$("#OutdoorTab").css("margin-top", -$("#IndoorTab").height() + "px");
 }
 
 function UpdateSelectedPlantType(){
+	Resize();
 	if (Mobile) return;
 	switch (SelectedPlantType) {
 		case 0:
@@ -114,7 +119,7 @@ function UpdateSelectedPlantType(){
 			break;
 			
 		case 2:
-			$("#Macrame").css("height", PlantTypeHeightVH + "vh");
+			$("#Specials").css("height", PlantTypeHeightVH + "vh");
 			scrollToPlants();
 			// $("#slider").animate({"margin-left": "-100vw"}, 550, function(){});
 			$("#slider").animate({"margin-left": "-100vw"}, 550, function(){});
@@ -136,12 +141,16 @@ function UpdateSelectedPlantType(){
 	}
 }
 function SelectHeading(){
-	$("#HeadingIndoor").css("opacity", SelectedPlantType == 1 ? "1" : "0.8");
-	$("#HeadingMacrame").css("opacity", SelectedPlantType == 2 ? "1" : "0.8");
-	$("#HeadingOutdoor").css("opacity", SelectedPlantType == 3 ? "1" : "0.8");
-	$("#HeadingIndoor").css("color", SelectedPlantType == 1 ? "#000000" : "#222222");
-	$("#HeadingMacrame").css("color", SelectedPlantType == 2 ? "#000000" : "#222222");
-	$("#HeadingOutdoor").css("color", SelectedPlantType == 3 ? "#000000" : "#222222");
+	// 		Change the opacities to just lighter colours
+	// $("#IndoorTab").css("opacity", SelectedPlantType == 1 ? "1" : "0.8");
+	// $("#SpecialsTab").css("opacity", SelectedPlantType == 2 ? "1" : "0.8");
+	// $("#OutdoorTab").css("opacity", SelectedPlantType == 3 ? "1" : "0.8");
+	$("#IndoorTab").css("color", SelectedPlantType == 1 ? "#000000" : "#222222");
+	$("#SpecialsTab").css("color", SelectedPlantType == 2 ? "#000000" : "#222222");
+	$("#OutdoorTab").css("color", SelectedPlantType == 3 ? "#000000" : "#222222");
+	$("#IndoorTab").css("z-index", SelectedPlantType == 1 ? 10 : 1);
+	$("#SpecialsTab").css("z-index", SelectedPlantType == 2 ? 10 : 1);
+	$("#OutdoorTab").css("z-index", SelectedPlantType == 3 ? 10 : 1);
 }
 
 function scrollToPlants(){
