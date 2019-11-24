@@ -6,8 +6,6 @@ var SelectedPlantType = -1;
 
 var AnimationTime = 300;
 var Mobile = false;
-var galleryButton = false; // Remove
-var galleryBanner = false; // Remove
 
 $(function()
 {
@@ -20,13 +18,6 @@ $(function()
 	$(".overlay").animate({opacity: 0.0}, 750, function(){
 		$(".overlay").css("visibility", "hidden");
 	});
-	if(!galleryButton){
-		$(".gallery").hide();
-		$(".top article").css("margin-top", "6%");
-	}
-	if(!galleryBanner){
-		$(".gallerySect > h1").hide();
-	}
 	
 	Mobile = $(window).width() <= 800;
 	Resize();
