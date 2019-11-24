@@ -6,8 +6,8 @@ var SelectedPlantType = -1;
 
 var AnimationTime = 300;
 var Mobile = false;
-var galleryButton = false;
-var galleryBanner = false;
+var galleryButton = false; // Remove
+var galleryBanner = false; // Remove
 
 $(function()
 {
