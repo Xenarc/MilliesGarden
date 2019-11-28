@@ -40,7 +40,6 @@
 					<article>
 						<h1>Welcome to <span>Millie's Garden</span></h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-						<a href="#gallerySect" class="gallery lightShadow">View Gallery</a>
 					</article>
 				</section>
 				<nav id="FrontNav"><ul>
@@ -50,7 +49,6 @@
 					</ul>
 				</nav>
 				<section class="gallerySect">
-					<h1 class="lightShadow">Gallery</h1>
 					<div class="tris">
 						<div class="triSect" id="triSect1">
 							<h1>Indoor Plants</h1>
