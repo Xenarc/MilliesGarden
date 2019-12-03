@@ -129,7 +129,17 @@
 					</div>
 				</section>
 				<section class="order">
-					
+					<h1>Order</h1>
+					<div class="orderPlantSize"><img src="img/small.png" alt=""></div>
+					<div class="orderPlantSize"><img src="img/med.png" alt=""></div>
+					<div class="orderPlantSize"><img src="img/large.png" alt=""></div>
+					<div class="orderGrid">
+						// TODO: fix tab button
+						// TODO: add items
+						// TODO: make gallery 80vw and centered witth a "gallery" title
+						// TODO: ask client about order deisgn
+						// TODO: update creative Cloud and upload order design to ask client
+					</div>
 				</section>
 			</main>
 			<footer>

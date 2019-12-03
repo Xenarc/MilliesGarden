@@ -612,6 +612,17 @@ footer a{
 	object-fit: cover;
 }
 
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1080px) {
+	.plants .heading h1{
+		font-size: 5vw;
+	}
+	
+	#triSect2 h1{
+		font-size: 4vw;
+	}
+}
+
 .orderPlantSize{
 	
 }
@@ -630,16 +641,6 @@ footer a{
 	
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 1080px) {
-	.plants .heading h1{
-		font-size: 5vw;
-	}
-	
-	#triSect2 h1{
-		font-size: 4vw;
-	}
- }
  
  @media screen and (max-width: 800px) {
 	.TopNav{
