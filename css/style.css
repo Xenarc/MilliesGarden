@@ -612,7 +612,23 @@ footer a{
 	object-fit: cover;
 }
 
+.orderPlantSize{
+	
+}
 
+.orderGrid{
+	line-height: 0;
+	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+.orderPlants{
+	
+}
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 1080px) {

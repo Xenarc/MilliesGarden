@@ -129,13 +129,7 @@
 					</div>
 				</section>
 				<section class="order">
-					<h1>Order</h1>
-					<div class="orderPlantSize"><img src="img/small.png" alt=""></div>
-					<div class="orderPlantSize"><img src="img/med.png" alt=""></div>
-					<div class="orderPlantSize"><img src="img/large.png" alt=""></div>
-					<div class="orderGrid">
-						
-					</div>
+					
 				</section>
 			</main>
 			<footer>
