@@ -6,9 +6,18 @@ var SelectedPlantType = -1;
 
 var AnimationTime = 300;
 var Mobile = false;
+var tabs = false
+var plantDescs = false
 
 $(function()
 {
+	if(!tabs){
+		$(".tab").hide()
+	}
+	if(!plantDescs){
+		$(".plants p").hide()
+	}
+	
 	UpdateSelectedPlantType();
 	var windowHeight = $(window).height();
 	
@@ -86,7 +95,7 @@ function Resize(){
 								2:2,
 								3:3,
 								4:3,
-								5:4}
+								5:3}
 	
 	$(".galleryImage").css("width",(1/cols)*100+"%");
 	$(".galleryImage").css("height",PlantTypeHeightVH / rows[cols] + "vh");

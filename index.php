@@ -64,68 +64,79 @@
 						</div>
 					</div>
 				</section>
-				<div class="headings">
-					<div class="tab" id="IndoorTab">
-						<h1>Indoor Plants</h1>
-						<div class="GalleryDesc">
-							<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<section class="gallery">
+					<div class="headings">
+						<div class="tab" id="IndoorTab">
+							<h1>Indoor Plants</h1>
+							<div class="GalleryDesc">
+								<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							</div>
+						</div>
+						<div class="tab" id="SpecialsTab">
+							<h1>Specials</h1>
+							<div class="GalleryDesc">
+								<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							</div>
+						</div>
+						<div class="tab" id="OutdoorTab">
+							<h1>Outdoor Plants</h1>
+							<div class="GalleryDesc">
+								<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							</div>
 						</div>
 					</div>
-					<div class="tab" id="SpecialsTab">
-						<h1>Specials</h1>
-						<div class="GalleryDesc">
-							<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						</div>
-					</div>
-					<div class="tab" id="OutdoorTab">
-						<h1>Outdoor Plants</h1>
-						<div class="GalleryDesc">
-							<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						</div>
-					</div>
-				</div>
-				<div id="slider">
-					<div id="indoorPlants" class="plants">
-						<div class="grid">
-							<?php
-									$IndoorPlantFiles = scandir('img/Indoor/');
-									foreach($IndoorPlantFiles as $photo) {
+					<div id="slider">
+						<div id="indoorPlants" class="plants">
+							<div class="grid">
+								<?php
+										$IndoorPlantFiles = scandir('img/Indoor/');
+										foreach($IndoorPlantFiles as $photo) {
 											if($photo !== "." && $photo !== "..") {
-													echo '<img class="galleryImage" src="./img/Indoor/'.$photo.'" />';
+												echo '<img class="galleryImage" src="./img/Indoor/'.$photo.'" />';
 											}
+										}
+										?>
+							</div>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
+						</div>
+						<div id="Specials" class="plants">
+							<div class="grid">
+								<?php
+								$CurrentSpecial = "Christmas"; // Christmas, General, Macrame, Mothersday
+								$IndoorPlantFiles = scandir('img/Specials/');
+								foreach($IndoorPlantFiles as $photo) {
+									if($photo !== "." && $photo !== "..") {
+										echo '<img class="galleryImage" src="./img/Specials/'.$photo.'" />';
 									}
-							?>
+								}
+								?>
+							</div>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
+						</div>
+						<div id="outdoorPlants" class="plants">
+							<div class="grid">
+								<?php
+								$IndoorPlantFiles = scandir('img/Outdoor/');
+								foreach($IndoorPlantFiles as $photo) {
+									if($photo !== "." && $photo !== "..") {
+										echo '<img class="galleryImage" src="./img/Outdoor/'.$photo.'" />';
+									}
+								}
+								?>
+							</div>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 						</div>
 					</div>
-					<div id="Specials" class="plants">
-						<div class="grid">
-							<?php
-									$CurrentSpecial = "Christmas"; // Christmas, General, Macrame, Mothersday
-									$IndoorPlantFiles = scandir('img/Specials/');
-									foreach($IndoorPlantFiles as $photo) {
-											if($photo !== "." && $photo !== "..") {
-													echo '<img class="galleryImage" src="./img/Specials/'.$photo.'" />';
-											}
-									}
-							?>
-						</div>
+				</section>
+				<section class="order">
+					<h1>Order</h1>
+					<div class="orderPlantSize"><img src="img/small.png" alt=""></div>
+					<div class="orderPlantSize"><img src="img/med.png" alt=""></div>
+					<div class="orderPlantSize"><img src="img/large.png" alt=""></div>
+					<div class="orderGrid">
+						
 					</div>
-					<div id="outdoorPlants" class="plants">
-						<div class="grid">
-							<?php
-									$IndoorPlantFiles = scandir('img/Outdoor/');
-									foreach($IndoorPlantFiles as $photo) {
-											if($photo !== "." && $photo !== "..") {
-													echo '<img class="galleryImage" src="./img/Outdoor/'.$photo.'" />';
-											}
-									}
-							?>
-						</div>
-					</div>
-				</div>
-				<div class="order">
-					
-				</div>
+				</section>
 			</main>
 			<footer>
 				<img src="img/img1.png" alt="Logo">
