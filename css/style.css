@@ -207,7 +207,7 @@ p{
 
 .top article{
 	margin: auto;
-	margin-top: 8%;
+	margin-top: 6%;
 	width: 85%;
 	color: #222;
 	text-align: center;
@@ -239,6 +239,7 @@ p{
 .top article h1 span{
 	font-size: 36pt;
 	font-weight: 600;
+	display: inline-block;
 	font-family: 'Dancing Script';
 	color: #3C4725;
 }
