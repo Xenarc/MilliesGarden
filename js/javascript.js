@@ -103,6 +103,8 @@ function Resize(){
 	$(".galleryImage").css("width", (100 / cols) + "%");
 	$(".galleryImage").css("height", 100 / rows[cols] + "%");
 	
+	$(".orderGalleryImage").css("width", (100 / cols) + "%");
+	$(".orderGalleryImage").css("height", 100 / rows[cols] + "%");
 	
 	$("#SpecialsTab").css("margin-top", -$("#IndoorTab").height() + "px");
 	$("#OutdoorTab").css("margin-top", -$("#IndoorTab").height() + "px");

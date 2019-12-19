@@ -155,7 +155,7 @@ main{
 	/* overflow: hidden; */
 	z-index: -10;
 	/* TEMP:  */
-	height: 800vh;
+	height: fit-content;
 }
 
 *{
@@ -633,7 +633,7 @@ footer a{
 	justify-content: flex-end;
 }
 
-.galleryImage img {
+.galleryImage img, .orderGalleryImage img{
 	display: block;
 	margin: auto;	
 	width: 95%;
@@ -657,8 +657,18 @@ footer a{
 	
 }
 
+
+.orderGrid * {
+	padding: 5%;
+}
+
+.orderGalleryImage{
+	
+}
+
 .orderGrid{
 	line-height: 0;
+	height: fit;
 	height: 100%;
 	display: -webkit-flex;
 	display: -ms-flex;
