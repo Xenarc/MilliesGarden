@@ -88,46 +88,48 @@
 							</div>
 						</div>
 					</div>
-					<div id="slider">
-						<div id="indoorPlants" class="plants">
-							<div class="grid">
-								<?php
-										$IndoorPlantFiles = scandir('img/Indoor/');
-										foreach($IndoorPlantFiles as $photo) {
-											if($photo !== "." && $photo !== "..") {
-												echo '<div class="galleryImage"><img src="./img/Indoor/'.$photo.'" /></div>';
+					<div id="sliderContainer">
+						<div id="slider">
+							<div id="indoorPlants" class="plants">
+								<div class="grid">
+									<?php
+											$IndoorPlantFiles = scandir('img/Indoor/');
+											foreach($IndoorPlantFiles as $photo) {
+												if($photo !== "." && $photo !== "..") {
+													echo '<div class="galleryImage"><img src="./img/Indoor/'.$photo.'" /></div>';
+												}
 											}
+											?>
+								</div>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
+							</div>
+							<div id="Specials" class="plants">
+								<div class="grid">
+									<?php
+									$CurrentSpecial = "Christmas"; // Christmas, General, Macrame, Mothersday
+									$IndoorPlantFiles = scandir('img/Specials/');
+									foreach($IndoorPlantFiles as $photo) {
+										if($photo !== "." && $photo !== "..") {
+											echo '<div class="galleryImage"><img src="./img/Specials/'.$photo.'" /></div>';
 										}
-										?>
-							</div>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
-						</div>
-						<div id="Specials" class="plants">
-							<div class="grid">
-								<?php
-								$CurrentSpecial = "Christmas"; // Christmas, General, Macrame, Mothersday
-								$IndoorPlantFiles = scandir('img/Specials/');
-								foreach($IndoorPlantFiles as $photo) {
-									if($photo !== "." && $photo !== "..") {
-										echo '<div class="galleryImage"><img src="./img/Specials/'.$photo.'" /></div>';
 									}
-								}
-								?>
+									?>
+								</div>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 							</div>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
-						</div>
-						<div id="outdoorPlants" class="plants">
-							<div class="grid">
-								<?php
-								$IndoorPlantFiles = scandir('img/Outdoor/');
-								foreach($IndoorPlantFiles as $photo) {
-									if($photo !== "." && $photo !== "..") {
-										echo '<div class="galleryImage"><img src="./img/Outdoor/'.$photo.'" /></div>';
+							<div id="outdoorPlants" class="plants">
+								<div class="grid">
+									<?php
+									$IndoorPlantFiles = scandir('img/Outdoor/');
+									foreach($IndoorPlantFiles as $photo) {
+										if($photo !== "." && $photo !== "..") {
+											echo '<div class="galleryImage"><img src="./img/Outdoor/'.$photo.'" /></div>';
+										}
 									}
-								}
-								?>
+									?>
+								</div>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 							</div>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 						</div>
 					</div>
 				</section>

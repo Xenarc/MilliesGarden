@@ -405,10 +405,10 @@ p{
 }
 
 .gallery{
-	width: 80vw;
-	margin: auto;
-	overflow: hidden;
-	margin-bottom: 4em;
+	background-color: #c5d1be;
+	width: 100vw;
+	height: calc(75vh + 6em);
+	padding-bottom: 5vh;
 }
 
 .gallerySect > h1{
@@ -422,6 +422,13 @@ p{
 	width: 100%;
 	text-align: center;
 	color: #EEEEEE;
+}
+
+#sliderContainer{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+	margin-bottom: 2vh;
 }
 
 #slider{
@@ -617,6 +624,7 @@ footer a{
 .grid{
 	line-height: 0;
 	height: 100%;
+	width: 100%;
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
