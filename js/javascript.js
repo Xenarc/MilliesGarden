@@ -86,9 +86,10 @@ $(function()
 });
 
 function Resize(){
+	console.log("RESIZE!");
 	Mobile = $(window).width() <= 800;
 	
-	PlantTypeHeightVH =  $(window).width() <= 690 ? 110 : 75;
+	PlantTypeHeightVH = $(window).width() <= 690 ? 110 : 75;
 	var cols = Math.floor($(window).width()*0.004);
 	cols = cols > 5 ? 5 : cols;
 	const rows = {1:3,
@@ -97,9 +98,10 @@ function Resize(){
 								4:3,
 								5:3}
 	
-	$(".galleryImage").css("width",(1/cols)*100+"%");
+	$(".galleryImage").css("width",(1/cols)*$(".gallery").width()+"px");
 	$(".galleryImage").css("height",PlantTypeHeightVH / rows[cols] + "vh");
-	console.log($("#indoorPlants").height() + "px");
+	$(".plants").width = $(".gallery").width();
+	
 	$("#SpecialsTab").css("margin-top", -$("#IndoorTab").height() + "px");
 	$("#OutdoorTab").css("margin-top", -$("#IndoorTab").height() + "px");
 }
@@ -122,7 +124,7 @@ function UpdateSelectedPlantType(){
 			$("#Specials").css("height", PlantTypeHeightVH + "vh");
 			scrollToPlants();
 			// $("#slider").animate({"margin-left": "-100vw"}, 550, function(){});
-			$("#slider").animate({"margin-left": "-100vw"}, 550, function(){});
+			$("#slider").animate({"margin-left": -1*$(".gallery").width()+"px"}, 550, function(){});
 			SelectHeading();
 			break;
 			
@@ -130,7 +132,7 @@ function UpdateSelectedPlantType(){
 			$("#outdoorPlants").css("height", PlantTypeHeightVH + "vh");
 			scrollToPlants();
 			// $("#slider").animate({"margin-left": "-200vw"}, 550, function(){});
-			$("#slider").animate({"margin-left": "-200vw"}, 550, function(){});
+			$("#slider").animate({"margin-left": -2*$(".gallery").width()+"px"}, 550, function(){});
 			SelectHeading();
 			break;
 				

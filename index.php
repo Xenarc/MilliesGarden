@@ -65,6 +65,9 @@
 					</div>
 				</section>
 				<section class="gallery">
+					<div class="galleryHeading">
+						<h2 class="sectSub">Gallery</h2>
+					</div>
 					<div class="headings">
 						<div class="tab" id="IndoorTab">
 							<h1>Indoor Plants</h1>
@@ -92,7 +95,7 @@
 										$IndoorPlantFiles = scandir('img/Indoor/');
 										foreach($IndoorPlantFiles as $photo) {
 											if($photo !== "." && $photo !== "..") {
-												echo '<img class="galleryImage" src="./img/Indoor/'.$photo.'" />';
+												echo '<div class="galleryImage"><img src="./img/Indoor/'.$photo.'" /></div>';
 											}
 										}
 										?>
@@ -106,7 +109,7 @@
 								$IndoorPlantFiles = scandir('img/Specials/');
 								foreach($IndoorPlantFiles as $photo) {
 									if($photo !== "." && $photo !== "..") {
-										echo '<img class="galleryImage" src="./img/Specials/'.$photo.'" />';
+										echo '<div class="galleryImage"><img src="./img/Specials/'.$photo.'" /></div>';
 									}
 								}
 								?>
@@ -119,7 +122,7 @@
 								$IndoorPlantFiles = scandir('img/Outdoor/');
 								foreach($IndoorPlantFiles as $photo) {
 									if($photo !== "." && $photo !== "..") {
-										echo '<img class="galleryImage" src="./img/Outdoor/'.$photo.'" />';
+										echo '<div class="galleryImage"><img src="./img/Outdoor/'.$photo.'" /></div>';
 									}
 								}
 								?>

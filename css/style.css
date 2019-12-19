@@ -103,7 +103,7 @@ header{
 .heroTint{
 	background: #252f253f;
 	position: absolute;
-	overflow: hidden;
+	overflow: hidden;	
 	width: 100vw;
 	height: 100vh;
 	min-height: 40em;
@@ -395,6 +395,22 @@ p{
 	clear: both;
 }
 
+.sectSub{
+	font-size: 3em;
+	color: #3C4725;
+	text-align: center;
+	padding: 0.5em 0;
+	font-weight: 600;
+	font-family: 'Dancing Script';
+}
+
+.gallery{
+	width: 80vw;
+	margin: auto;
+	overflow: hidden;
+	margin-bottom: 4em;
+}
+
 .gallerySect > h1{
 	font-family: "Dancing Script";
 	font-size: 4em;
@@ -409,8 +425,8 @@ p{
 }
 
 #slider{
+	width: 240vw;
 	height: 75vh;
-	width: 300vw;
 	clear: both;
 	overflow:hidden;
 }
@@ -419,7 +435,7 @@ p{
 	height: 100%;
 	transition: 300ms;
 	float: left;
-	width: 100vw;
+	width: 80vw;
 	color: #322;
 	overflow: hidden;
 	display: block;
@@ -549,6 +565,7 @@ footer a{
 	padding:0;
 	vertical-align:middle;
 	/* display:table-cell; */
+	/* display:table-cell; */
 	width: calc(33.333333% - 0.4em);
 	text-align: center;
 	float: left;
@@ -607,8 +624,12 @@ footer a{
 	justify-content: flex-end;
 }
 
-.galleryImage{
-	height: 100%;
+.galleryImage img {
+	display: block;
+	margin: auto;	
+	width: 95%;
+	margin-top: 2.5%;
+	height: 95%;
 	object-fit: cover;
 }
 
@@ -718,10 +739,11 @@ footer a{
 	}
 	
 	#slider{
-		width: 50vw;
+		width: 80vw;
 		margin: auto;
 		height: 330vh;
 	}
+	
 	.plants{
 		height: 110vh;
 		overflow: hidden;
