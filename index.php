@@ -134,15 +134,20 @@
 					</div>
 				</section>
 				<section class="order">
-					<h1>Order</h1>
-					<div class="orderPlantSize"><img src="img/small.png" alt=""></div>
-					<div class="orderPlantSize"><img src="img/med.png" alt=""></div>
-					<div class="orderPlantSize"><img src="img/large.png" alt=""></div>
-					<div class="orderGrid">
-						<?php include 'orderGallery.php';?>
+					<h1>Purchase</h1>
+					<div class="plantSizes">
+						<div class="orderPlantSize shadow" id="plantSizeSmall"><img src="img/Small.png" alt="Small"></div>
+						<div class="orderPlantSize shadow" id="plantSizeMedium"><img src="img/Medium.png" alt="Medium"></div>
+						<div class="orderPlantSize shadow" id="plantSizeLarge"><img src="img/Large.png" alt="Large"></div>
+					</div>
+					<div class="orderGridContainer">
+						<div class="orderGrid">
+							
+						</div>
 					</div>
 				</section>
 			</main>
+			<div class="test"></div>
 			<footer>
 				<img src="img/img1.png" alt="Logo">
 				<ul>
@@ -156,3 +161,11 @@
 		</div>
 	</body>
 </html>
+
+
+
+
+<!-- TODO: make gallerySect text turn green with the selected tab for gallery feedback
+		 TODO: add a scroll feedback when user clicks on gallerySect
+		 
+ -->

@@ -61,6 +61,21 @@ $(function()
 		UpdateSelectedPlantType();
 	});
 	
+	$("#plantSizeLarge").click(function(){
+		$("#plantSizeLarge").toggleClass("orderPlantSizeSelected");
+		updateOrderPlants();
+	});
+	
+	$("#plantSizeMedium").click(function(){
+		$("#plantSizeMedium").toggleClass("orderPlantSizeSelected");
+		updateOrderPlants();
+	});
+	
+	$("#plantSizeSmall").click(function(){
+		$("#plantSizeSmall").toggleClass("orderPlantSizeSelected");
+		updateOrderPlants();
+	});
+	
 	$(document).scroll(function()
 	{
 		
@@ -84,6 +99,12 @@ $(function()
 		Resize();
 	});
 });
+
+function updateOrderPlants(){
+	$(".orderGrid").load('orderGallery.php');
+	$.ajaxSetup({ cache: false });
+	Resize();
+}
 
 function Resize(){
 	Mobile = $(window).width() <= 800;

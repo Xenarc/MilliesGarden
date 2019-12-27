@@ -14,9 +14,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "Connected successfully";
 
-$sql = "SELECT * FROM pots WHERE qtyAvailable>0";
+$sql = "SELECT * FROM pots WHERE qtyAvailable>=0";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -26,12 +25,10 @@ if (!$result) {
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-				echo "id: " . $row["potId"]. " - Name: " . $row["potName"] . "<br>";
-				echo $row["imageUrl"];
-				echo "'<div class='orderGalleryImage'><img src='" . $row["imageUrl"] . "'/></div>";
+				echo "<div class='orderGalleryImage'><img src='" . $row["imageUrl"] . "'/></div>";
     }
 } else {
-    echo "0 results";
+    echo "No Products Available";
 }
 $conn->close();
 

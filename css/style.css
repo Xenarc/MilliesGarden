@@ -622,7 +622,7 @@ footer a{
 	background-color: #9E8170FF;
 }
 
-.grid{
+.grid, .orderGrid{
 	line-height: 0;
 	height: 100%;
 	width: 100%;
@@ -635,11 +635,48 @@ footer a{
 
 .galleryImage img, .orderGalleryImage img{
 	display: block;
-	margin: auto;	
+	margin: auto;
 	width: 95%;
 	margin-top: 2.5%;
 	height: 95%;
 	object-fit: cover;
+}
+
+.orderGridContainer{
+	width: 75%;
+	height: 60vh;
+	overflow: hidden;
+	margin: auto;
+}
+
+.plantSizes{
+	width: 30em;
+	margin: auto;
+	padding: 2.5% 0;
+	overflow: hidden;
+}
+
+.orderPlantSize{
+	width: calc(33.33333% - 2 * 0.4em);
+	margin: 0 0.4em;
+	float: left;
+	display: block;
+	overflow: hidden;
+	background-color: #FFFFFF;
+}
+
+.orderPlantSizeSelected{
+	background-color: #E8E8E8;
+}
+
+.orderPlantSize img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.orderPlantSize:hover{
+	background-color: #EEEEEE;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
@@ -653,17 +690,13 @@ footer a{
 	}
 }
 
-.orderPlantSize{
-	
-}
-
-
-.orderGrid * {
-	padding: 5%;
-}
-
-.orderGalleryImage{
-	
+.order h1{
+	font-size: 3em;
+	color: #3C4725;
+	text-align: center;
+	padding-top: 0.5em;
+	font-weight: 600;
+	font-family: 'Dancing Script';
 }
 
 .orderGrid{
