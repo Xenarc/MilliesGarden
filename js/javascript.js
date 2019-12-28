@@ -101,9 +101,25 @@ $(function()
 });
 
 function updateOrderPlants(){
-	$(".orderGrid").load('orderGallery.php');
+	// $(".orderGrid").load('orderGallery.php');
+	
+	
+	// AJAX used to refresh all of the plants in the db
 	$.ajaxSetup({ cache: false });
-	Resize();
+	
+	$.ajax({
+		type: 'POST',
+		url: 'orderGallery.php',
+		data: { small : $("#plantSizeSmall").hasClass("orderPlantSizeSelected") == true ? 1 : 0,
+						medium : $("#plantSizeMedium").hasClass("orderPlantSizeSelected") == true ? 1 : 0, 
+						large : $("#plantSizeLarge").hasClass("orderPlantSizeSelected") == true ? 1 : 0
+					},
+		success: function(response) {
+				$('.orderGrid').html(response);
+				Resize();
+		}
+	});
+	
 }
 
 function Resize(){
@@ -170,6 +186,7 @@ function SelectHeading(){
 	// $("#IndoorTab").css("opacity", SelectedPlantType == 1 ? "1" : "0.8");
 	// $("#SpecialsTab").css("opacity", SelectedPlantType == 2 ? "1" : "0.8");
 	// $("#OutdoorTab").css("opacity", SelectedPlantType == 3 ? "1" : "0.8");
+	// TODO: Convert this into .addClass and put this styling into style.css
 	$("#IndoorTab").css("color", SelectedPlantType == 1 ? "#000000" : "#222222");
 	$("#SpecialsTab").css("color", SelectedPlantType == 2 ? "#000000" : "#222222");
 	$("#OutdoorTab").css("color", SelectedPlantType == 3 ? "#000000" : "#222222");
