@@ -45,7 +45,7 @@ if (!$result) {
 if ($result->num_rows > 0) {
 	// Output data of each row
 	while($row = $result->fetch_assoc()) {
-		echo "<div class='orderGalleryImage'><img src='" . $row["imageUrl"] . "'/></div>";
+		echo "<div id='potId" . $row["potId"] . "' class='orderGalleryImage'><img class='shadow' src='" . $row["imageUrl"] . "'/></div>";
 	}
 } else {
 	// No records => no products :(

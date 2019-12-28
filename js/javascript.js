@@ -11,12 +11,7 @@ var plantDescs = false
 
 $(function()
 {
-	if(!tabs){
-		$(".tab").hide();
-	}
-	if(!plantDescs){
-		$(".plants p").hide();
-	}
+	$.ajaxSetup({ cache: false });
 	
 	updateOrderPlants();
 	UpdateSelectedPlantType();
@@ -25,6 +20,7 @@ $(function()
 	$(".galleryImage").error(function(){
 		$(this).hide();
 	});
+	
 	$(".overlay").animate({opacity: 0.0}, 750, function(){
 		$(".overlay").css("visibility", "hidden");
 	});
@@ -32,12 +28,17 @@ $(function()
 	Mobile = $(window).width() <= 800;
 	Resize();
 	
+	$(document).click(function (e) {
+		if ($(e.target).closest(".plantDetails").length != 0) return false;
+		$(".plantDetails").hide();
+	});
+	
 	$("#IndoorTab").click(function(){
 		SelectedPlantType = 1;
 		UpdateSelectedPlantType();
 	});
 	
-	$("#SpecialsTab").click(function(){
+	$("#SpecialsTab").click(function(){ // TODO: make this cleaner
 		SelectedPlantType = 2;
 		UpdateSelectedPlantType();
 	});
@@ -77,9 +78,29 @@ $(function()
 		updateOrderPlants();
 	});
 	
+	$(document.body).on("click", ".orderGalleryImage", function (event) {
+		// console.log("You clicked on: ", event.target.get(0).id);
+		isDetailedViewing = true;
+		var id = $(this).attr('id');
+		id = id.substr(5);
+		console.log(id);
+		
+		$.ajax({
+			type: 'POST',
+			url: 'getProductDetails.php',
+			data: {
+				"id": id
+			},
+			success: function (response) {
+				$(".plantDetails").show();
+				$('.plantDetails').html(response);
+			}
+		});
+	});
+	
 	$(document).scroll(function()
 	{
-		
+		// Nav Bar stuff
 		windowHeight = $(window).height();
 		var scrollHeight = $(document).scrollTop();
 		var startFade = windowHeight*0.275;
@@ -95,6 +116,7 @@ $(function()
 		}else{  // Not in fade but up at the top, thus, invisible
 			$("header").css("visibility", "hidden");
 		}
+		// End Nav Bar stuff
 	});
 	$(window).on('resize', function(){
 		Resize();
@@ -102,11 +124,7 @@ $(function()
 });
 
 function updateOrderPlants(){
-	// $(".orderGrid").load('orderGallery.php');
-	
-	
 	// AJAX used to refresh all of the plants in the db
-	$.ajaxSetup({ cache: false });
 	
 	$.ajax({
 		type: 'POST',
@@ -157,23 +175,17 @@ function UpdateSelectedPlantType(){
 			
 		case 1:
 			$("#indoorPlants").css("height", PlantTypeHeightVH + "vh");
-			scrollToPlants();
 			$("#slider").animate({"margin-left": "0"}, 550, function(){});
-			SelectHeading();
 			break;
 			
 		case 2:
 			$("#Specials").css("height", PlantTypeHeightVH + "vh");
-			scrollToPlants();
 			$("#slider").animate({"margin-left": -1*$("#sliderContainer").width()+"px"}, 550, function(){});
-			SelectHeading();
 			break;
 			
 		case 3:
 			$("#outdoorPlants").css("height", PlantTypeHeightVH + "vh");
-			scrollToPlants();
 			$("#slider").animate({"margin-left": -2*$("#sliderContainer").width()+"px"}, 550, function(){});
-			SelectHeading();
 			break;
 				
 		default:
@@ -181,35 +193,6 @@ function UpdateSelectedPlantType(){
 			UpdateSelectedPlantType();
 			break;
 	}
-}
-function SelectHeading(){
-	// 		Change the opacities to just lighter colours
-	// $("#IndoorTab").css("opacity", SelectedPlantType == 1 ? "1" : "0.8");
-	// $("#SpecialsTab").css("opacity", SelectedPlantType == 2 ? "1" : "0.8");
-	// $("#OutdoorTab").css("opacity", SelectedPlantType == 3 ? "1" : "0.8");
-	// TODO: Convert this into .addClass and put this styling into style.css
-	$("#IndoorTab").css("color", SelectedPlantType == 1 ? "#000000" : "#222222");
-	$("#SpecialsTab").css("color", SelectedPlantType == 2 ? "#000000" : "#222222");
-	$("#OutdoorTab").css("color", SelectedPlantType == 3 ? "#000000" : "#222222");
-	$("#IndoorTab").css("z-index", SelectedPlantType == 1 ? 10 : 1);
-	$("#SpecialsTab").css("z-index", SelectedPlantType == 2 ? 10 : 1);
-	$("#OutdoorTab").css("z-index", SelectedPlantType == 3 ? 10 : 1);
-}
-
-function scrollToPlants(){
-	return; // FIXME
-	$('html, body').animate({
-		scrollTop: $("#slider").offset().top - 75 
-	}, AnimationTime);
-	// if (!Mobile) {
-	//   $('html, body').animate({
-	//     scrollTop: $(".gallerySect").offset().top + $(".plants").height() - windowHeight*0.08
-	//   }, AnimationTime);
-	// }else{
-	//   $('html, body').animate({
-	//     scrollTop: $(".gallerySect").offset().top + $(".plants").height() - windowHeight*0.08
-	//   }, AnimationTime);
-	// }
 }
 
 function scale(x, startFade, stopFade)

@@ -68,40 +68,19 @@
 					<div class="galleryHeading">
 						<h2 class="sectSub">Gallery</h2>
 					</div>
-					<div class="headings">
-						<div class="tab" id="IndoorTab">
-							<h1>Indoor Plants</h1>
-							<div class="GalleryDesc">
-								<p>indoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							</div>
-						</div>
-						<div class="tab" id="SpecialsTab">
-							<h1>Specials</h1>
-							<div class="GalleryDesc">
-								<p>SpecialsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							</div>
-						</div>
-						<div class="tab" id="OutdoorTab">
-							<h1>Outdoor Plants</h1>
-							<div class="GalleryDesc">
-								<p>outdoorPlantsLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							</div>
-						</div>
-					</div>
 					<div id="sliderContainer">
 						<div id="slider">
 							<div id="indoorPlants" class="plants">
 								<div class="grid">
 									<?php
-											$IndoorPlantFiles = scandir('img/Indoor/');
-											foreach($IndoorPlantFiles as $photo) {
-												if($photo !== "." && $photo !== "..") {
-													echo '<div class="galleryImage"><img src="./img/Indoor/'.$photo.'" /></div>';
-												}
+										$IndoorPlantFiles = scandir('img/Indoor/');
+										foreach($IndoorPlantFiles as $photo) {
+											if($photo !== "." && $photo !== "..") {
+												echo '<div class="galleryImage"><img src="./img/Indoor/'.$photo.'" /></div>';
 											}
-											?>
+										}
+										?>
 								</div>
-								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 							</div>
 							<div id="Specials" class="plants">
 								<div class="grid">
@@ -115,7 +94,6 @@
 									}
 									?>
 								</div>
-								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 							</div>
 							<div id="outdoorPlants" class="plants">
 								<div class="grid">
@@ -128,7 +106,6 @@
 									}
 									?>
 								</div>
-								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel minus voluptates, quae debitis, quas assumenda adipisci fuga repellat unde quisquam ipsam? Harum esse reiciendis ipsam, quia officiis deleniti cupiditate perspiciatis?</p>
 							</div>
 						</div>
 					</div>
@@ -145,9 +122,18 @@
 							
 						</div>
 					</div>
+					<div class="plantDetails lightShadow">
+						<!-- <h2>PLANT NAME</h2>
+						<img src="img/TESTIMG.png" alt="PLANT NAME">
+						<h3>$99.99</h3>
+						<p>POT DESCRIPTION Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quasi culpa consectetur.</p>
+						<br>
+						<h4>POT SIZE</h4>
+						<br>
+						<a id="buyButton" class="" href="checkout.php">Purchase</a> -->
+					</div>
 				</section>
 			</main>
-			<div class="test"></div>
 			<footer>
 				<img src="img/img1.png" alt="Logo">
 				<ul>
