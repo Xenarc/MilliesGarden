@@ -630,7 +630,7 @@ footer a{
 	display: -ms-flex;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-end;
+	justify-content: flex-start;
 }
 
 .galleryImage img, .orderGalleryImage img{
@@ -697,17 +697,6 @@ footer a{
 	padding-top: 0.5em;
 	font-weight: 600;
 	font-family: 'Dancing Script';
-}
-
-.orderGrid{
-	line-height: 0;
-	height: fit;
-	height: 100%;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
 }
 
 .orderPlants{

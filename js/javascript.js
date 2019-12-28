@@ -12,12 +12,13 @@ var plantDescs = false
 $(function()
 {
 	if(!tabs){
-		$(".tab").hide()
+		$(".tab").hide();
 	}
 	if(!plantDescs){
-		$(".plants p").hide()
+		$(".plants p").hide();
 	}
 	
+	updateOrderPlants();
 	UpdateSelectedPlantType();
 	var windowHeight = $(window).height();
 	
