@@ -122,16 +122,8 @@
 							
 						</div>
 					</div>
-					<div class="plantDetails lightShadow">
-						<!-- <h2>PLANT NAME</h2>
-						<img src="img/TESTIMG.png" alt="PLANT NAME">
-						<h3>$99.99</h3>
-						<p>POT DESCRIPTION Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quasi culpa consectetur.</p>
-						<br>
-						<h4>POT SIZE</h4>
-						<br>
-						<a id="buyButton" class="" href="checkout.php">Purchase</a> -->
-					</div>
+					<div class="plantDetails lightShadow"></div>
+					<div class="plantDetailsOverlay"></div>
 				</section>
 			</main>
 			<footer>

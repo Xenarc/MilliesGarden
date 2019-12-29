@@ -5,6 +5,7 @@ var SelectedPlantType = -1;
 //  3 = Outdoor
 
 var AnimationTime = 300;
+var plantDetailsFadeTime = 150;
 var Mobile = false;
 var tabs = false
 var plantDescs = false
@@ -30,7 +31,10 @@ $(function()
 	
 	$(document).click(function (e) {
 		if ($(e.target).closest(".plantDetails").length != 0) return false;
-		$(".plantDetails").hide();
+		// $(".plantDetails").hide();
+		// $(".plantDetailsOverlay").hide();
+		$(".plantDetails").fadeOut(plantDetailsFadeTime, "linear", function () { });
+		$(".plantDetailsOverlay").fadeOut(plantDetailsFadeTime, "linear", function () { });
 	});
 	
 	$("#IndoorTab").click(function(){
@@ -92,7 +96,10 @@ $(function()
 				"id": id
 			},
 			success: function (response) {
-				$(".plantDetails").show();
+				// $(".plantDetails").show();
+				// $(".plantDetailsOverlay").show();
+				$(".plantDetails").fadeIn(plantDetailsFadeTime, "linear", function (){});
+				$(".plantDetailsOverlay").fadeIn(plantDetailsFadeTime, "linear", function (){});
 				$('.plantDetails').html(response);
 			}
 		});
