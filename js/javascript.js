@@ -31,10 +31,7 @@ $(function()
 	
 	$(document).click(function (e) {
 		if ($(e.target).closest(".plantDetails").length != 0) return false;
-		// $(".plantDetails").hide();
-		// $(".plantDetailsOverlay").hide();
-		$(".plantDetails").fadeOut(plantDetailsFadeTime, "linear", function () { });
-		$(".plantDetailsOverlay").fadeOut(plantDetailsFadeTime, "linear", function () { });
+		hidePlantDetails();
 	});
 	
 	$("#IndoorTab").click(function(){
@@ -42,7 +39,7 @@ $(function()
 		UpdateSelectedPlantType();
 	});
 	
-	$("#SpecialsTab").click(function(){ // TODO: make this cleaner
+	$("#SpecialsTab").click(function(){ // TODO: make this cleaner VVV
 		SelectedPlantType = 2;
 		UpdateSelectedPlantType();
 	});
@@ -98,8 +95,7 @@ $(function()
 			success: function (response) {
 				// $(".plantDetails").show();
 				// $(".plantDetailsOverlay").show();
-				$(".plantDetails").fadeIn(plantDetailsFadeTime, "linear", function (){});
-				$(".plantDetailsOverlay").fadeIn(plantDetailsFadeTime, "linear", function (){});
+				showPlantDetails();
 				$('.plantDetails').html(response);
 			}
 		});
@@ -129,6 +125,16 @@ $(function()
 		Resize();
 	});
 });
+
+function hidePlantDetails() {
+	$(".plantDetails").fadeOut(plantDetailsFadeTime, "linear", function () { });
+	$(".plantDetailsOverlay").fadeOut(plantDetailsFadeTime, "linear", function () { });
+}
+
+function showPlantDetails() {
+	$(".plantDetails").fadeIn(plantDetailsFadeTime, "linear", function () { });
+	$(".plantDetailsOverlay").fadeIn(plantDetailsFadeTime, "linear", function () { });
+}
 
 function updateOrderPlants(){
 	// AJAX used to refresh all of the plants in the db
@@ -162,7 +168,7 @@ function Resize(){
 								4:3,
 								5:3}
 	
-	// $(".galleryImage").css("height", PlantTypeHeightVH / rows[cols] + "vh");
+
 	$(".galleryImage").css("width", (100 / cols) + "%");
 	$(".galleryImage").css("height", 100 / rows[cols] + "%");
 	

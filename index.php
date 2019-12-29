@@ -119,10 +119,11 @@
 					</div>
 					<div class="orderGridContainer">
 						<div class="orderGrid">
-							
 						</div>
 					</div>
-					<div class="plantDetails lightShadow"></div>
+					<div class="plantDetails lightShadow">
+						
+					</div>
 					<div class="plantDetailsOverlay"></div>
 				</section>
 			</main>
