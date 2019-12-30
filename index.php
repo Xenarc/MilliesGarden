@@ -135,44 +135,47 @@
 						<h1>Checkout</h1>
 						<form class="checkoutForm" action="checkout.php" method="post">
 							<h3>You</h3>
-							<div class="fieldGroup" id="emailField">
-								<span>Email:</span><input type="text" placeholder="john.doe@email.com">
+							<div class="fieldGroup tooltip" id="emailField">
+								<span class="tooltiptext">Email Address: john.doe@email.com </span><span class="fieldLabel">Email</span><input type="text" placeholder="john.doe@email.com">
 							</div>
-							<div class="fieldGroup" id="nameField">
-								<span>Name:</span>
+							<div class="fieldGroup tooltip" id="nameField">
+								<span class="tooltiptext">First and Last Names: John Doe</span><span class="fieldLabel">Name</span>
 								<input type="text" placeholder="John Doe">
 							</div>
-							<div class="fieldGroup" id="phoneField">
-								<span>Phone:</span><input type="text" placeholder="0490 123 456">
+							<div class="fieldGroup tooltip" id="phoneField">
+								<span class="tooltiptext">Phone Number: 0490 123 456</span><span class="fieldLabel">Phone</span><input type="text" placeholder="0490 123 456">
 							</div>
 							
 							<h3>Your Address</h3>
-							<div class="fieldGroup addressField" id="countryField">
-								<span>Country:</span><input type="text" placeholder="Australia">
+							<div class="fieldGroup addressField tooltip" id="countryField">
+								<span class="tooltiptext">Address country: Australia</span><span class="fieldLabel">Country</span><input type="text" placeholder="Australia">
 							</div>
-							<div class="fieldGroup addressField" id="postcodeField">
-								<span>Postcode:</span><input type="text" placeholder="3000">
+							<div class="fieldGroup addressField tooltip" id="postcodeField">
+								<span class="tooltiptext">Address postcode: 3000</span><span class="fieldLabel">Postcode</span><input type="text" placeholder="3000">
 							</div>
-							<div class="fieldGroup addressField" id="stateField">
-								<span>State:</span><input type="text" placeholder="Victoria">
+							<div class="fieldGroup addressField tooltip" id="stateField">
+								<span class="tooltiptext">Adress state: Victoria</span><span class="fieldLabel">State</span><input type="text" placeholder="Victoria">
 							</div>
-							<div class="fieldGroup addressField" id="cityField">
-								<span>City / Town:</span><input type="text" placeholder="Melbourne">
+							<div class="fieldGroup addressField tooltip" id="cityField">
+								<span class="tooltiptext">Address city or town: Melbourne</span><span class="fieldLabel">City / Town</span><input type="text" placeholder="Melbourne">
 							</div>
-							<div class="fieldGroup addressField" id="streetField">
-								<span>Street Address:</span><input type="text" placeholder="1 Succulent Lane">
+							<div class="fieldGroup addressField tooltip" id="streetField">
+								<span class="tooltiptext">Street address with number: 1 Succulent Lane</span><span class="fieldLabel">Street Address</span><input type="text" placeholder="1 Succulent Lane">
 							</div>
-							<div class="fieldGroup addressField" id="extraInfoField">
-								<span>Extra Address Information:</span><input type="text" placeholder="">
+							<div class="fieldGroup addressField tooltip" id="extraInfoField">
+								<span class="tooltiptext">Any extra address information such as apartment numbers or delivery notes</span><span class="fieldLabel">Extra Address Information</span><input type="text" placeholder="">
 							</div>
 							
 							<h3>Your New Plant</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ducimus totam eius.</p>
-							<div class="fieldGroup" id="orderNotesField">
-								<span>Notes:</span><input type="text" placeholder="">
+							<div class="fieldGroup tooltip" id="orderNotesField">
+								<span class="tooltiptext">Any order notes, refer to above text</span><span class="fieldLabel">Notes</span><input type="text" placeholder="">
 							</div>
 							<div id="disclaimer">
 								*Disclaimer*
+							</div>
+							<div class="completeCheckoutContainer">
+								<input type="submit" value="Order" class="completeCheckout">
 							</div>
 						</form>
 						<br>
