@@ -117,6 +117,10 @@
 						<div class="orderPlantSize shadow" id="plantSizeMedium"><img src="img/Medium.png" alt="Medium"></div>
 						<div class="orderPlantSize shadow" id="plantSizeLarge"><img src="img/Large.png" alt="Large"></div>
 					</div>
+					<div class="howItWorks">
+						<h2>How it Works:</h2>
+						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia voluptas nihil at eos? Cupiditate amet eveniet modi, ipsam delectus expedita voluptatum nemo soluta aliquid dolore quo quibusdam obcaecati libero minima!</p>
+					</div>
 					<div class="orderGridContainer">
 						<div class="orderGrid">
 						</div>
@@ -125,6 +129,54 @@
 						
 					</div>
 					<div class="plantDetailsOverlay"></div>
+				</section>
+				<section class="checkout">
+					<div class="checkoutFormContainer shadow">
+						<h1>Checkout</h1>
+						<form class="checkoutForm" action="checkout.php" method="post">
+							<h3>You</h3>
+							<div class="fieldGroup" id="emailField">
+								<span>Email:</span><input type="text" placeholder="john.doe@email.com">
+							</div>
+							<div class="fieldGroup" id="nameField">
+								<span>Name:</span>
+								<input type="text" placeholder="John Doe">
+							</div>
+							<div class="fieldGroup" id="phoneField">
+								<span>Phone:</span><input type="text" placeholder="0490 123 456">
+							</div>
+							
+							<h3>Your Address</h3>
+							<div class="fieldGroup addressField" id="countryField">
+								<span>Country:</span><input type="text" placeholder="Australia">
+							</div>
+							<div class="fieldGroup addressField" id="postcodeField">
+								<span>Postcode:</span><input type="text" placeholder="3000">
+							</div>
+							<div class="fieldGroup addressField" id="stateField">
+								<span>State:</span><input type="text" placeholder="Victoria">
+							</div>
+							<div class="fieldGroup addressField" id="cityField">
+								<span>City / Town:</span><input type="text" placeholder="Melbourne">
+							</div>
+							<div class="fieldGroup addressField" id="streetField">
+								<span>Street Address:</span><input type="text" placeholder="1 Succulent Lane">
+							</div>
+							<div class="fieldGroup addressField" id="extraInfoField">
+								<span>Extra Address Information:</span><input type="text" placeholder="">
+							</div>
+							
+							<h3>Your New Plant</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ducimus totam eius.</p>
+							<div class="fieldGroup" id="orderNotesField">
+								<span>Notes:</span><input type="text" placeholder="">
+							</div>
+							<div id="disclaimer">
+								*Disclaimer*
+							</div>
+						</form>
+						<br>
+					</div>
 				</section>
 			</main>
 			<footer>
@@ -144,7 +196,7 @@
 
 
 
-<!-- TODO: make gallerySect text turn green with the selected tab for gallery feedback
-		 TODO: add a scroll feedback when user clicks on gallerySect
-		 
+<!-- 	TODO: make gallerySect text turn green with the selected tab for gallery feedback
+			TODO: add a scroll feedback when user clicks on gallerySect
+			TODO: change cursor for gallerySect Text to "pointer"
  -->
