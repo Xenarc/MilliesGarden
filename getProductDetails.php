@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 	$row["qtyAvailable"];
 	$row["potSize"];
 	
-	echo "<h2>" . $row["potName"] . "</h2>\n<div class='plantDetailsExit' onclick='hidePlantDetails()'>x</div>\n<img src='" . $row["imageUrl"] . "' alt='" . $row["potName"] . "'>\n<h3>$" . $row["price"] . "</h3>\n<p>" . $row["potDescription"] . "</p>\n<br>\n<h4>POT SIZE: " . $row["potSize"] . "</h4>\n<br>\n<a id='buyButton' class=''>Purchase</a>";
+	echo "<h2>" . $row["potName"] . "</h2>\n<div class='plantDetailsExit' onclick='hidePlantDetails()'>x</div>\n<img src='" . $row["imageUrl"] . "' alt='" . $row["potName"] . "'>\n<h3>$" . $row["price"] . "</h3>\n<p>" . $row["potDescription"] . "</p>\n<br>\n<h4>POT SIZE: " . $row["potSize"] . "</h4>\n<br>\n<a class='buyButton' onclick='buyButtonClicked()' potId='" . $row["potId"] . "'class=''>Purchase</a>";
 	
 } else {
 	// No records => no products :(

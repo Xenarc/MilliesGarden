@@ -29,9 +29,28 @@ $(function()
 	Mobile = $(window).width() <= 800;
 	Resize();
 	
-	$(document).click(function (e) {
+																															// TODO: REMOVE ME
+	isDetailedViewing = true;
+	
+	$.ajax({
+		type: 'POST',
+		url: 'getProductDetails.php',
+		data: {
+			"id": 2
+		},
+		success: function (response) {
+			showPlantDetails();
+			$('.plantDetails').html(response);
+			buyButtonClicked();
+		}
+	});
+	
+																															// TODO: REMOVE ME END
+		
+		$(document).click(function (e) {
 		if ($(e.target).closest(".plantDetails").length != 0) return false;
-		hidePlantDetails();
+		if ($(".plantDetails").is(':visible'))
+			hidePlantDetails();
 	});
 	
 	$("#IndoorTab").click(function(){
@@ -79,12 +98,17 @@ $(function()
 		updateOrderPlants();
 	});
 	
+	$(".completeCheckout").click(function(){
+		console.log($(".purchasePlantPreview .buyButton").attr("potId"));
+		
+		$(".potIdField").attr("value", $(".purchasePlantPreview .buyButton").attr("potId"));
+	});
+	
 	$(document.body).on("click", ".orderGalleryImage", function (event) {
 		// console.log("You clicked on: ", event.target.get(0).id);
 		isDetailedViewing = true;
 		var id = $(this).attr('id');
 		id = id.substr(5);
-		console.log(id);
 		
 		$.ajax({
 			type: 'POST',
@@ -93,8 +117,6 @@ $(function()
 				"id": id
 			},
 			success: function (response) {
-				// $(".plantDetails").show();
-				// $(".plantDetailsOverlay").show();
 				showPlantDetails();
 				$('.plantDetails').html(response);
 			}
@@ -126,6 +148,14 @@ $(function()
 	});
 });
 
+function validateCheckoutform(){
+	var x = document.forms["checkoutForm"]["name"].value;
+	if (x.split(' ').length != 2) { // check split name
+		alert("Your first and last name must be filled out");
+		return false;
+	}
+}
+
 function hidePlantDetails() {
 	$(".plantDetails").fadeOut(plantDetailsFadeTime, "linear", function () { });
 	$(".plantDetailsOverlay").fadeOut(plantDetailsFadeTime, "linear", function () { });
@@ -134,6 +164,13 @@ function hidePlantDetails() {
 function showPlantDetails() {
 	$(".plantDetails").fadeIn(plantDetailsFadeTime, "linear", function () { });
 	$(".plantDetailsOverlay").fadeIn(plantDetailsFadeTime, "linear", function () { });
+}
+
+function buyButtonClicked(){
+	console.log($("#buyButton").attr("potId"));
+	hidePlantDetails();
+	$(window).scrollTop($(".checkout").offset().top - 50);
+	$(".purchasePlantPreview").html($(".plantDetails").html());
 }
 
 function updateOrderPlants(){
@@ -151,14 +188,6 @@ function updateOrderPlants(){
 				Resize();
 		}
 	});
-	
-}
-function validateCheckoutForm(){
-	var x = document.forms["checkoutForm"]["email"].value;
-	// if (x == "") {
-	// 	alert("Name must be filled out");
-	// 	return false;
-	// }
 }
 
 function formatPhone() {
@@ -166,9 +195,6 @@ function formatPhone() {
 	// $("#phoneField input").val(("#### ### ###").replace(/#/g, _ => $("#phoneField input").val()[i++]));
 	$("#phoneField input").val($("#phoneField input").val().replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3'));
 }
-
-
-
 
 function Resize(){
 	Mobile = $(window).width() <= 800;

@@ -801,7 +801,7 @@ footer a{
 	padding: 1em 0;
 }
 
-#buyButton{
+.buyButton{
 	padding: 2.5% 5%;
 	background-color: #f7739d;
 	float: right;
@@ -811,14 +811,11 @@ footer a{
 	color: black;
 	font-size: 1.175em;
 	border-radius:10%;
+	cursor: pointer;
 }
 
-#buyButton:hover{
+.buyButton:hover{
 	background-color: #E7638d;
-}
-
-.checkout{
-	
 }
 
 .checkout h1{
@@ -930,6 +927,36 @@ footer a{
 .completeCheckout:hover{
 	background: #30c261;
 	color: white;
+}
+
+.purchasePlantPreview{
+	margin: auto;
+	width: 25%;
+	overflow: hidden;
+	border: solid 1px #283226;
+	padding: 1%;
+	background-color: #F8F8F8;
+}
+
+.purchasePlantPreview h2{
+	font-size: 1.25em;
+	padding-bottom: 2.5%;
+}
+
+.purchasePlantPreview img{
+	width: 100%;
+}
+
+.purchasePlantPreview .buyButton{
+	display: none;
+}
+
+#disclaimer{
+	padding-top: 2.5%;
+	width: 100%;
+}
+#disclaimer p{
+	text-align: center;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */

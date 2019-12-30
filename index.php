@@ -141,8 +141,8 @@
 				</section>
 				<section class="checkout">
 					<div class="checkoutFormContainer shadow">
-						<h1>Checkout</h1>
-						<form name="checkoutForm" class="checkoutForm" action="checkout.php" method="post">
+						<h1 id="checkout">Checkout</h1>
+						<form name="checkoutForm" class="checkoutForm" onsubmit="return validateCheckoutform()" action="checkout.php" method="post">
 							<h3>You</h3>
 							<div class="fieldGroup tooltip" id="emailField">
 								<span class="tooltiptext">Email Address: john.doe@email.com </span><span class="fieldLabel">Email</span><input required name="email" type="email" placeholder="john.doe@email.com">
@@ -177,13 +177,16 @@
 							<h3>Your New Plant</h3>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ducimus totam eius.</p>
 							<div class="fieldGroup tooltip" id="orderNotesField">
-								<span class="tooltiptext">Any order notes, refer to above text</span><span class="fieldLabel">Notes</span><input name="orderNotes" type="text" placeholder="">
+								<span class="tooltiptext">Any order notes, refer to above text</span><span class="fieldLabel">Notes</span><input rows="3" name="orderNotes" type="text" placeholder="">
 							</div>
+							
+							<div class="purchasePlantPreview"></div>
 							<div id="disclaimer">
-								*Disclaimer*
+								<p>*Disclaimer* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil soluta odio at voluptatem quia, iste repudiandae eius recusandae a illum placeat commodi aliquam ratione beatae.</p>
 							</div>
+							<input class="potIdField" type="hidden" name="potId" value="" />
 							<div class="completeCheckoutContainer">
-								<input onclick="validateCheckoutForm()" name="orderSubmit" type="submit" value="Order" class="completeCheckout">
+								<input name="orderSubmit" type="submit" value="Order" class="completeCheckout">
 							</div>
 						</form>
 						<br>
