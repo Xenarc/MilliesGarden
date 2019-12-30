@@ -153,6 +153,22 @@ function updateOrderPlants(){
 	});
 	
 }
+function validateCheckoutForm(){
+	var x = document.forms["checkoutForm"]["email"].value;
+	// if (x == "") {
+	// 	alert("Name must be filled out");
+	// 	return false;
+	// }
+}
+
+function formatPhone() {
+	var i = 0;
+	// $("#phoneField input").val(("#### ### ###").replace(/#/g, _ => $("#phoneField input").val()[i++]));
+	$("#phoneField input").val($("#phoneField input").val().replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3'));
+}
+
+
+
 
 function Resize(){
 	Mobile = $(window).width() <= 800;
