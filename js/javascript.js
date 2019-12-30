@@ -30,20 +30,20 @@ $(function()
 	Resize();
 	
 																															// TODO: REMOVE ME
-	isDetailedViewing = true;
+	// isDetailedViewing = true;
 	
-	$.ajax({
-		type: 'POST',
-		url: 'getProductDetails.php',
-		data: {
-			"id": 2
-		},
-		success: function (response) {
-			showPlantDetails();
-			$('.plantDetails').html(response);
-			buyButtonClicked();
-		}
-	});
+	// $.ajax({
+	// 	type: 'POST',
+	// 	url: 'getProductDetails.php',
+	// 	data: {
+	// 		"id": 2
+	// 	},
+	// 	success: function (response) {
+	// 		showPlantDetails();
+	// 		$('.plantDetails').html(response);
+	// 		buyButtonClicked();
+	// 	}
+	// });
 	
 																															// TODO: REMOVE ME END
 		

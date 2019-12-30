@@ -1,10 +1,11 @@
 <?php
+
 include 'util.php';
 
 $email = escape($_POST["email"]);
 $phone = escape($_POST["phone"]);
 $country = escape($_POST["country"]);
-$postCode = escape($_POST["postcode"]);
+$postcode = escape($_POST["postcode"]);
 $state = escape($_POST["state"]);
 $city = escape($_POST["city"]);
 $extraInfo = escape($_POST["extraAddressInfo"]);
@@ -14,25 +15,18 @@ $potId = escape($_POST["potId"]);
 $fName = split_name(escape($_POST["name"]))[0];
 $lName = split_name(escape($_POST["name"]))[1];
 
-// $street = $POST_[""];
-// $number = ;
-
-// $custId = ;
+$streetNo = explode(' ',trim(escape($_POST["streetAddress"])))[0];
+$street = substr(strstr(escape($_POST["streetAddress"])," "), 1);
 
 // $delivery = ;
 // $orderTotal = ;
 // $shippingCost = ;
-
-// $emailNewsletter = ;
 
 // DB and Server Stuff
 $servername = "localhost";
 $username = "milliesgarden";
 $password = "JDHkUBqYzmcz33Mp";
 $dbname = "milliesgarden";
-
-
-die();
 
 
 // Create connection
@@ -44,7 +38,7 @@ if (!$conn) {
 }
 
 // SQL Query
-$sql = "INSERT INTO 'customers' ('custId', 'dateCreated', 'fName', 'lName', 'email', 'phone', 'country', 'postCode', 'state', 'city', 'street', 'number', 'extraAddressInfo', 'emailNewsletter') VALUES (NULL, CURRENT_TIMESTAMP, 'Mark', 'Blashki', $email, $phone, $country, $postcode, $state, $city, 'Brysons road', '62', $extraInfo, '0')";
+$sql = "INSERT INTO `customers` (`custId`, `dateCreated`, `fName`, `lName`, `email`, `phone`, `country`, `postCode`, `state`, `city`, `street`, `number`, `extraAddressInfo`, `emailNewsletter`) VALUES (NULL, CURRENT_TIMESTAMP, '" . $fName . "', '" . $lName . "', '" . $email . "', '" . $phone . "', '" . $country . "', '" . $postcode . "', '" . $state . "', '" . $city . "', '" . $street . "', '" . $streetNo . "', '" . $extraInfo . "', '0');";
 
 // Query the DB
 $result = $conn->query($sql);
@@ -52,6 +46,7 @@ $result = $conn->query($sql);
 // If bad query Argh!
 if (!$result) {
 	trigger_error('Invalid query: ' . $conn->error);
+	echo $sql;
 	die();
 }
 
