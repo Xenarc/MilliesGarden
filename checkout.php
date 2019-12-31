@@ -1,6 +1,6 @@
 <?php
 
-include 'util.php';
+require_once('util.php');
 
 $email = escape($_POST["email"]);
 $phone = escape($_POST["phone"]);
@@ -9,7 +9,9 @@ $postcode = escape($_POST["postcode"]);
 $state = escape($_POST["state"]);
 $city = escape($_POST["city"]);
 $extraInfo = escape($_POST["extraAddressInfo"]);
+$extraInfo = $extraInfo === "" ? "NULL" : $extraInfo;
 $orderNotes = escape($_POST["orderNotes"]);
+$orderNotes = $orderNotes === "" ? "NULL" : $orderNotes;
 $potId = escape($_POST["potId"]);
 $updateDetails = (bool) escape($_POST["updateDetails"]); // Update = 1 or keep = 0;
 $newUser = (bool) escape($_POST["newUser"]);
@@ -25,14 +27,17 @@ $street = substr(strstr(escape($_POST["streetAddress"])," "), 1);
 // $shippingCost = ;
 
 if($newUser){
-	$sql = "INSERT INTO `customers` (`custId`, `dateCreated`, `fName`, `lName`, `email`, `phone`, `country`, `postCode`, `state`, `city`, `street`, `number`, `extraAddressInfo`, `emailNewsletter`) 
-	VALUES (NULL, CURRENT_TIMESTAMP, '" . $fName . "', '" . $lName . "', '" . $email . "', '" . $phone . "', '" . $country . "', '" . $postcode . "', '" . $state . "', '" . $city . "', '" . $street . "', '" . $streetNo . "', '" . $extraInfo . ", '0';";
-requestDB($sql);
+	if(checkIfUserExists($email)){
+		// They have refreshed the page but the data has already been inserted
+	}else{
+		$sql = "INSERT INTO `customers` (`custId`, `dateCreated`, `fName`, `lName`, `email`, `phone`, `country`, `postCode`, `state`, `city`, `street`, `number`, `extraAddressInfo`, `emailNewsletter`) VALUES (NULL, CURRENT_TIMESTAMP, '" . $fName . "', '" . $lName . "', '" . $email . "', '" . $phone . "', '" . $country . "', '" . $postcode . "', '" . $state . "', '" . $city . "', '" . $street . "', '" . $streetNo . "', '" . $extraInfo . "', '0');";
+		requestDB($sql);
+	}
 	
 }else{
 	if($updateDetails){
 		$sql = "UPDATE `customers` SET `fName`='" . $fName . "', `lName`='" . $lName . "', `email`='" . $email . "', `phone`='" . $phone . "', `country`='" . $country . "', `postCode`='" . $postcode . "', `state`='" . $state . "', `city`='" . $city . "', `street`='" . $street . "', `number`='" . $streetNo . "', `extraAddressInfo`='" . $extraInfo . "', `emailNewsletter`='0' WHERE `email`='" . $email . "';";
-requestDB($sql);
+		requestDB($sql);
 		
 	}else{
 		// Keeping old record, don't bother updating DB.

@@ -9,6 +9,13 @@ function escape(string $string){
 	return $string;
 }
 
+function checkIfUserExists(string $emailParam){
+	$sql = "SELECT * FROM `customers` WHERE email='" . $emailParam . "';";
+	$result = requestDB($sql);
+
+	return sizeof($result) != 0; // 1 = exist
+}
+
 function requestDB(string $sql){
 	// DB login data
 	$servername = "localhost";

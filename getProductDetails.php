@@ -1,5 +1,5 @@
 <?php
-include 'util.php';
+require_once('util.php');
 
 // DB and Server Stuff
 $servername = "localhost";
