@@ -11,6 +11,7 @@ $city = escape($_POST["city"]);
 $extraInfo = escape($_POST["extraAddressInfo"]);
 $orderNotes = escape($_POST["orderNotes"]);
 $potId = escape($_POST["potId"]);
+$updateDetails = (bool)$_POST["updateDetails"];
 
 $fName = split_name(escape($_POST["name"]))[0];
 $lName = split_name(escape($_POST["name"]))[1];
@@ -22,61 +23,11 @@ $street = substr(strstr(escape($_POST["streetAddress"])," "), 1);
 // $orderTotal = ;
 // $shippingCost = ;
 
-// DB and Server Stuff
-$servername = "localhost";
-$username = "milliesgarden";
-$password = "JDHkUBqYzmcz33Mp";
-$dbname = "milliesgarden";
+// Check if user exists
 
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
-
-// SQL Query
-$sql = "INSERT INTO `customers` (`custId`, `dateCreated`, `fName`, `lName`, `email`, `phone`, `country`, `postCode`, `state`, `city`, `street`, `number`, `extraAddressInfo`, `emailNewsletter`) VALUES (NULL, CURRENT_TIMESTAMP, '" . $fName . "', '" . $lName . "', '" . $email . "', '" . $phone . "', '" . $country . "', '" . $postcode . "', '" . $state . "', '" . $city . "', '" . $street . "', '" . $streetNo . "', '" . $extraInfo . "', '0');";
-
-// Query the DB
-$result = $conn->query($sql);
-
-// If bad query Argh!
-if (!$result) {
-	trigger_error('Invalid query: ' . $conn->error);
-	echo $sql;
-	die();
-}
-
-////// Getting Data
-// // If 1 more more records exist:
-// if ($result->num_rows > 0) {
-// 	// Output data of each row
-// 	while($row = $result->fetch_assoc()) {
-// 		echo "<div id='potId" . $row["potId"] . "' class='orderGalleryImage'><img class='shadow' src='" . $row["imageUrl"] . "'/></div>";
-// 	}
-// } else {
-// 	// No records => no products :(
-// 	echo "No Products Available"; // TODO: Style this text
-// }
-// $conn->close();
 
 // INSERT INTO 'customers' ('custId', 'dateCreated', 'fName', 'lName', 'email', 'phone', 'country', 'postCode', 'state', 'city', 'street', 'number', 'extraAddressInfo', 'emailNewsletter') VALUES (NULL, CURRENT_TIMESTAMP, 'Mark', 'Blashki', 'markblashki1@gmail.com', '+61 0490 193 446', 'Australia', '3134', 'Victoria', 'Warranwood', 'Brysons road', '62', NULL, '0');
 // INSERT INTO 'pots' ('potId', 'imageUrl', 'potName', 'price', 'potDescription', 'potSize', 'qtyAvailable') VALUES (NULL, './img/pots/POT1.jpg', 'Concrete Rectangle', '19.95', 'A long rectangluar pot which is suited to big arrangements', '2', '3');
-
-
-
-
-
-
-
-
-
-
-
-
 
 function split_name($name){
 	$name = trim($name);

@@ -184,12 +184,19 @@
 							<div id="disclaimer">
 								<p>*Disclaimer* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil soluta odio at voluptatem quia, iste repudiandae eius recusandae a illum placeat commodi aliquam ratione beatae.</p>
 							</div>
-							<input class="potIdField" type="hidden" name="potId" value="" />
 							<div class="completeCheckoutContainer">
 								<input name="orderSubmit" type="submit" value="Order" class="completeCheckout">
 							</div>
 						</form>
 						<br>
+					</div>
+					<div class="askUserForUpdateDetails shadow">
+						<h1>Back again?</h1>
+						<h3>Did you want to keep using</h3>
+						<div class="addressUpdate"></div>
+						<h3>or use the ones just entered?</h3>
+						<div class="updateDetailsButtons shadow" id="keep">Keep old details</div>
+						<div class="updateDetailsButtons shadow" id="new">Use new details</div>
 					</div>
 				</section>
 			</main>

@@ -30,86 +30,101 @@ $(function()
 	Resize();
 	
 																															// TODO: REMOVE ME
-	// isDetailedViewing = true;
+	isDetailedViewing = true;
 	
-	// $.ajax({
-	// 	type: 'POST',
-	// 	url: 'getProductDetails.php',
-	// 	data: {
-	// 		"id": 2
-	// 	},
-	// 	success: function (response) {
-	// 		showPlantDetails();
-	// 		$('.plantDetails').html(response);
-	// 		buyButtonClicked();
-	// 	}
-	// });
+	$.ajax({
+		type: 'POST',
+		url: 'getProductDetails.php',
+		data: {
+			"id": 2
+		},
+		success: function (response) {
+			showPlantDetails();
+			$('.plantDetails').html(response);
+			buyButtonClicked();
+		}
+	});
 	
 																															// TODO: REMOVE ME END
-		
-		$(document).click(function (e) {
+	// On Click away from .plantDetails
+	$(document).click(function (e) {
 		if ($(e.target).closest(".plantDetails").length != 0) return false;
 		if ($(".plantDetails").is(':visible'))
 			hidePlantDetails();
 	});
 	
-	$("#IndoorTab").click(function(){
-		SelectedPlantType = 1;
-		UpdateSelectedPlantType();
-	});
-	
-	$("#SpecialsTab").click(function(){ // TODO: make this cleaner VVV
-		SelectedPlantType = 2;
-		UpdateSelectedPlantType();
-	});
-	
-	$("#OutdoorTab").click(function(){
-		SelectedPlantType = 3;
-		UpdateSelectedPlantType();
-	});
-	
-	$("#triSect1").click(function() {
-		SelectedPlantType = 1;
-		UpdateSelectedPlantType();
-	});
-	
-	$("#triSect2").click(function() {
-		SelectedPlantType = 2;
-		UpdateSelectedPlantType();
-	});
-	
-	$("#triSect3").click(function() {
-		SelectedPlantType = 3;
-		UpdateSelectedPlantType();
-	});
-	
-	$("#plantSizeLarge").click(function(){
-		$("#plantSizeLarge").toggleClass("orderPlantSizeSelected");
-		updateOrderPlants();
-	});
-	
-	$("#plantSizeMedium").click(function(){
-		$("#plantSizeMedium").toggleClass("orderPlantSizeSelected");
-		updateOrderPlants();
-	});
-	
-	$("#plantSizeSmall").click(function(){
-		$("#plantSizeSmall").toggleClass("orderPlantSizeSelected");
-		updateOrderPlants();
-	});
-	
-	$(".completeCheckout").click(function(){
-		console.log($(".purchasePlantPreview .buyButton").attr("potId"));
+	// When click on trisects
+	$(".triSect").click(function() {
+		var id = $(this).attr("id");
+		SelectedPlantType = parseInt(id[id.length - 1]);
 		
-		$(".potIdField").attr("value", $(".purchasePlantPreview .buyButton").attr("potId"));
+		UpdateSelectedPlantType();
 	});
 	
+	// When click on plant sizes
+	$(".orderPlantSize").click(function () {
+		$(this).toggleClass("orderPlantSizeSelected");
+		updateOrderPlants();
+	});
+	
+	// When checkout submit button is pressed
+	$(".checkoutForm").submit(function (e) {
+		console.log("SUBMIT");
+		
+		var validationFailed = false;
+		
+		// Sets the id of the plant to be purchased to the value an input field so that the php can read it. It's a bit dodge, but... yeah
+		// $(".potIdField").attr("value", $(".purchasePlantPreview .buyButton").attr("potId"));
+
+		// Check if user exists
+		$.ajax({
+			type: 'POST',
+			url: 'checkUserExists.php',
+			data: {
+				email: $("#emailField input").val()
+			},
+			success: function (response) {
+				console.log("Success");
+				console.log(response);
+				console.log("end.");
+				// Response recieved
+				// Check existance of user (1 = yes; 0 = no)
+				if (response.charAt(0) == "1") {	// Exists. Show update details or keep old ones
+					$(".askUserForUpdateDetails").fadeIn(200, "linear", function () { });
+					$(".addressUpdate").html(response.substr(1));
+				}
+			}
+		});
+		
+		$("<input />").attr("type", "hidden")
+			.attr("updateDetails", "something")
+			.attr("potId", $(".purchasePlantPreview .buyButton").attr("potId"))
+			.appendTo(".checkoutForm");
+			
+// TEMP
+		e.preventDefault(); 
+		return false;
+// END TEMP
+
+		validateCheckoutform();
+		validationFailed = true;
+		
+		if (validationFailed) {
+			e.preventDefault();
+			return false;
+		}
+		
+		return true;
+	}); 
+	
+	// When click on product image preview
 	$(document.body).on("click", ".orderGalleryImage", function (event) {
-		// console.log("You clicked on: ", event.target.get(0).id);
 		isDetailedViewing = true;
+		
 		var id = $(this).attr('id');
 		id = id.substr(5);
 		
+		// Get Product details
 		$.ajax({
 			type: 'POST',
 			url: 'getProductDetails.php',
@@ -148,9 +163,10 @@ $(function()
 	});
 });
 
+// Validate form
 function validateCheckoutform(){
 	var x = document.forms["checkoutForm"]["name"].value;
-	if (x.split(' ').length != 2) { // check split name
+	if (x.split(' ').length < 2) { // check split name
 		alert("Your first and last name must be filled out");
 		return false;
 	}
@@ -192,7 +208,6 @@ function updateOrderPlants(){
 
 function formatPhone() {
 	var i = 0;
-	// $("#phoneField input").val(("#### ### ###").replace(/#/g, _ => $("#phoneField input").val()[i++]));
 	$("#phoneField input").val($("#phoneField input").val().replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3'));
 }
 
