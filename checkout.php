@@ -49,7 +49,15 @@ if($newUser){
 
 // Fetch order cost
 $sql = "SELECT * FROM `pots` WHERE `potId`=" . $potId . ";";
-$orderTotal = requestDB($sql)[0]["price"];
+$pot = requestDB($sql)[0];
+$orderTotal = $pot["price"];
+$qty = $pot["qtyAvailable"];
+if($qty == 0){
+	// Should never happen
+	echo "Error, no more of that pot is available :(";
+	die();
+}
+
 $shippingCost = 0;
 $delivery = 0;
 
@@ -63,7 +71,11 @@ $sql = "INSERT INTO `sales` (`saleId`, `potId`, `custId`, `dateStarted`, `dateOr
 				VALUES (NULL, '". $potId ."', '" . $custId . "', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL, '" . $orderTotal . "', '" . $shippingCost . "', '" . $delivery . "', '" . $orderNotes . "');";
 requestDB($sql);
 
+// Decrement Qty
 
+$qty -= 1;
+$sql = "UPDATE `pots` SET `qtyAvailable`='" . $qty . "' WHERE `potId`='" . $potId . "';";
+requestDB($sql);
 
 
 // INSERT INTO 'customers' ('custId', 'dateCreated', 'fName', 'lName', 'email', 'phone', 'country', 'postCode', 'state', 'city', 'street', 'number', 'extraAddressInfo', 'emailNewsletter') VALUES (NULL, CURRENT_TIMESTAMP, 'Mark', 'Blashki', 'markblashki1@gmail.com', '+61 0490 193 446', 'Australia', '3134', 'Victoria', 'Warranwood', 'Brysons road', '62', NULL, '0');

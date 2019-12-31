@@ -38,6 +38,7 @@ function requestDB(string $sql){
 
 	// Check if you have a SQL Error
 	if(!$result){
+		echo $sql . "\n\n";
 		printf("SQL failed: %s\n", mysqli_error($conn));
 		exit();
 	}
