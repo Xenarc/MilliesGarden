@@ -9,12 +9,13 @@ $postcode = escape($_POST["postcode"]);
 $state = escape($_POST["state"]);
 $city = escape($_POST["city"]);
 $extraInfo = escape($_POST["extraAddressInfo"]);
-$extraInfo = $extraInfo === "" ? "NULL" : $extraInfo;
 $orderNotes = escape($_POST["orderNotes"]);
-$orderNotes = $orderNotes === "" ? "NULL" : $orderNotes;
 $potId = escape($_POST["potId"]);
 $updateDetails = (bool) escape($_POST["updateDetails"]); // Update = 1 or keep = 0;
 $newUser = (bool) escape($_POST["newUser"]);
+
+// $extraInfo = $extraInfo === "" ? "" : $extraInfo;
+// $orderNotes = $orderNotes === "" ? "" : $orderNotes;
 
 $fName = split_name(escape($_POST["name"]))[0];
 $lName = split_name(escape($_POST["name"]))[1];
@@ -26,6 +27,8 @@ $street = substr(strstr(escape($_POST["streetAddress"])," "), 1);
 // $orderTotal = ;
 // $shippingCost = ;
 
+
+// Manage Customer Records
 if($newUser){
 	if(checkIfUserExists($email)){
 		// They have refreshed the page but the data has already been inserted
@@ -44,9 +47,28 @@ if($newUser){
 	}
 }
 
+// Fetch order cost
+$sql = "SELECT * FROM `pots` WHERE `potId`=" . $potId . ";";
+$orderTotal = requestDB($sql)[0]["price"];
+$shippingCost = 0;
+$delivery = 0;
+
+
+// Get CustomerId
+$sql = "SELECT * FROM `customers` WHERE `email`='" . $email . "';";
+$custId = requestDB($sql)[0]["custId"];
+
+// Create a Sales Record
+$sql = "INSERT INTO `sales` (`saleId`, `potId`, `custId`, `dateStarted`, `dateOrdered`, `dateDelivered`, `orderTotal`, `shippingCost`, `delivery`, `orderNotes`) 
+				VALUES (NULL, '". $potId ."', '" . $custId . "', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, NULL, '" . $orderTotal . "', '" . $shippingCost . "', '" . $delivery . "', '" . $orderNotes . "');";
+requestDB($sql);
+
+
+
 
 // INSERT INTO 'customers' ('custId', 'dateCreated', 'fName', 'lName', 'email', 'phone', 'country', 'postCode', 'state', 'city', 'street', 'number', 'extraAddressInfo', 'emailNewsletter') VALUES (NULL, CURRENT_TIMESTAMP, 'Mark', 'Blashki', 'markblashki1@gmail.com', '+61 0490 193 446', 'Australia', '3134', 'Victoria', 'Warranwood', 'Brysons road', '62', NULL, '0');
 // INSERT INTO 'pots' ('potId', 'imageUrl', 'potName', 'price', 'potDescription', 'potSize', 'qtyAvailable') VALUES (NULL, './img/pots/POT1.jpg', 'Concrete Rectangle', '19.95', 'A long rectangluar pot which is suited to big arrangements', '2', '3');
+// INSERT INTO `sales` (`saleId`, `potId`, `custId`, `dateStarted`, `dateOrdered`, `dateDelivered`, `orderTotal`, `shippingCost`, `delivery`, `orderNotes`) VALUES (NULL, '1', '160', NOW(), NOW(), NULL, '54', '5', '1', 'Delivery Yes and other order notes here');
 
 function split_name($name){
 	$array = explode(' ',trim($name));
