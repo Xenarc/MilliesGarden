@@ -12,6 +12,7 @@ $extraInfo = escape($_POST["extraAddressInfo"]);
 $orderNotes = escape($_POST["orderNotes"]);
 $potId = escape($_POST["potId"]);
 $updateDetails = (bool) escape($_POST["updateDetails"]);
+$newUser = (bool) escape($_POST["newUser"]);
 
 $fName = split_name(escape($_POST["name"]))[0];
 $lName = split_name(escape($_POST["name"]))[1];

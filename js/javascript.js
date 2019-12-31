@@ -127,7 +127,7 @@ $(function()
 				//  Response recieved
 				// Check existance of user (1 = yes; 0 = no)
 				
-				if (response.charAt(0) == "1") {	
+				if (response.charAt(0) == "1") {
 					//  Existing user. Show update details or keep old ones dialog
 					
 					// Show "Back Again?" Dialog
@@ -135,10 +135,16 @@ $(function()
 					// ... and populate it with their current details
 					$(".addressUpdate").html(response.substr(1));
 					
+					// Signal to php that user is not a first user
+					$("<input />").attr("type", "hidden").attr("name", "newUser").attr("value", "0").appendTo(".checkoutForm");
+					
 				} else {
 					//  They're a first user
 					// This is a bit of a workaround to stop php saying that `updateDetails` is undefined. As such, it is defined as -1
 					$("<input />").attr("type", "hidden").attr("name", "updateDetails").attr("value", "-1").appendTo(".checkoutForm");
+					
+					// Signal to php that user is a first user
+					$("<input />").attr("type", "hidden").attr("name", "newUser").attr("value", "1").appendTo(".checkoutForm");
 					
 					// Submit
 					$(".checkoutForm").submit();
