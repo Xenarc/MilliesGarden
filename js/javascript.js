@@ -9,6 +9,7 @@ var plantDetailsFadeTime = 150;
 var Mobile = false;
 var tabs = false
 var plantDescs = false
+var updateDetails = null;
 
 $(function()
 {
@@ -29,7 +30,7 @@ $(function()
 	Mobile = $(window).width() <= 800;
 	Resize();
 	
-																															// TODO: REMOVE ME
+																															// TODO: REMOVE ME Just selects a product automatically
 	isDetailedViewing = true;
 	
 	$.ajax({
@@ -45,7 +46,17 @@ $(function()
 		}
 	});
 	
+	// $(".checkoutForm").submit(function (e) {
+	// 	e.preventDefault();
+	// 	return false
+	// });
+	
 																															// TODO: REMOVE ME END
+
+	// Setup validation error dialog
+	$(".nameAlertDialog").dialog({
+		autoOpen: false, modal: true, show: "blind", hide: "blind"
+	});
 	// On Click away from .plantDetails
 	$(document).click(function (e) {
 		if ($(e.target).closest(".plantDetails").length != 0) return false;
@@ -61,6 +72,25 @@ $(function()
 		UpdateSelectedPlantType();
 	});
 	
+	//  Update Info? section
+	// New details button
+	$("#newDetails").click(function () {
+		$("<input />").attr("type", "hidden").attr("name", "updateDetails").attr("value", "1").appendTo(".checkoutForm");
+		
+		// Submit
+		$(".checkoutForm").submit();
+		
+	});
+	
+	// Old details button
+	$("#keepDetails").click(function () {
+		$("<input />").attr("type", "hidden").attr("name", "updateDetails").attr("value", "0").appendTo(".checkoutForm");
+		
+		// Submit
+		$(".checkoutForm").submit();
+		
+	});
+	
 	// When click on plant sizes
 	$(".orderPlantSize").click(function () {
 		$(this).toggleClass("orderPlantSizeSelected");
@@ -68,13 +98,23 @@ $(function()
 	});
 	
 	// When checkout submit button is pressed
-	$(".checkoutForm").submit(function (e) {
-		console.log("SUBMIT");
+	$(".completeCheckout").click(function () {
 		
+		// If HTML Validation is bad
+		if(!$(".checkoutForm").get(0).reportValidity()){
+			return;
+		}
 		var validationFailed = false;
+
+		// Validate
+		validationFailed = !validateCheckoutform();
 		
-		// Sets the id of the plant to be purchased to the value an input field so that the php can read it. It's a bit dodge, but... yeah
-		// $(".potIdField").attr("value", $(".purchasePlantPreview .buyButton").attr("potId"));
+		if (validationFailed) {
+			return;
+		}
+
+		// Add a new input field to POST the potId to the php form
+		$("<input />").attr("type", "hidden").attr("name", "potId").attr("value", $(".purchasePlantPreview .buyButton").attr("potId")).appendTo(".checkoutForm");
 
 		// Check if user exists
 		$.ajax({
@@ -84,38 +124,28 @@ $(function()
 				email: $("#emailField input").val()
 			},
 			success: function (response) {
-				console.log("Success");
-				console.log(response);
-				console.log("end.");
-				// Response recieved
+				//  Response recieved
 				// Check existance of user (1 = yes; 0 = no)
-				if (response.charAt(0) == "1") {	// Exists. Show update details or keep old ones
+				
+				if (response.charAt(0) == "1") {	
+					//  Existing user. Show update details or keep old ones dialog
+					
+					// Show "Back Again?" Dialog
 					$(".askUserForUpdateDetails").fadeIn(200, "linear", function () { });
+					// ... and populate it with their current details
 					$(".addressUpdate").html(response.substr(1));
+					
+				} else {
+					//  They're a first user
+					// This is a bit of a workaround to stop php saying that `updateDetails` is undefined. As such, it is defined as -1
+					$("<input />").attr("type", "hidden").attr("name", "updateDetails").attr("value", "-1").appendTo(".checkoutForm");
+					
+					// Submit
+					$(".checkoutForm").submit();
 				}
 			}
 		});
-		
-		$("<input />").attr("type", "hidden")
-			.attr("updateDetails", "something")
-			.attr("potId", $(".purchasePlantPreview .buyButton").attr("potId"))
-			.appendTo(".checkoutForm");
-			
-// TEMP
-		e.preventDefault(); 
-		return false;
-// END TEMP
-
-		validateCheckoutform();
-		validationFailed = true;
-		
-		if (validationFailed) {
-			e.preventDefault();
-			return false;
-		}
-		
-		return true;
-	}); 
+	});
 	
 	// When click on product image preview
 	$(document.body).on("click", ".orderGalleryImage", function (event) {
@@ -162,14 +192,21 @@ $(function()
 		Resize();
 	});
 });
+// End $(document){}
+
 
 // Validate form
 function validateCheckoutform(){
 	var x = document.forms["checkoutForm"]["name"].value;
-	if (x.split(' ').length < 2) { // check split name
-		alert("Your first and last name must be filled out");
+	
+	if (x.split(' ').length == 1 && x.length != 0) { // check split name
+
+		// next add the onclick handler
+		alert("Your full name must be filled out");
 		return false;
 	}
+	
+	return true;
 }
 
 function hidePlantDetails() {
@@ -183,7 +220,6 @@ function showPlantDetails() {
 }
 
 function buyButtonClicked(){
-	console.log($("#buyButton").attr("potId"));
 	hidePlantDetails();
 	$(window).scrollTop($(".checkout").offset().top - 50);
 	$(".purchasePlantPreview").html($(".plantDetails").html());

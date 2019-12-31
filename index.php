@@ -10,7 +10,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Kanit:100,100i,300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 		<script src="./js/javascript.js"></script>
 		<title>Millie's Garden</title>
 	</head>
@@ -185,8 +186,9 @@
 								<p>*Disclaimer* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil soluta odio at voluptatem quia, iste repudiandae eius recusandae a illum placeat commodi aliquam ratione beatae.</p>
 							</div>
 							<div class="completeCheckoutContainer">
-								<input name="orderSubmit" type="submit" value="Order" class="completeCheckout">
+								<input name="orderSubmit" type="button" value="Order" class="completeCheckout"> <!-- Actually the submit button but without the overhead -->
 							</div>
+							<div class="nameAlertDialog hidden" title="Name Field Error!">Your first and last name must be filled out</div>
 						</form>
 						<br>
 					</div>
@@ -195,8 +197,8 @@
 						<h3>Did you want to keep using</h3>
 						<div class="addressUpdate"></div>
 						<h3>or use the ones just entered?</h3>
-						<div class="updateDetailsButtons shadow" id="keep">Keep old details</div>
-						<div class="updateDetailsButtons shadow" id="new">Use new details</div>
+						<div class="updateDetailsButtons shadow" id="keepDetails">Keep old details</div>
+						<div class="updateDetailsButtons shadow" id="newDetails">Use new details</div>
 					</div>
 				</section>
 			</main>

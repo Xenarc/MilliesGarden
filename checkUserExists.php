@@ -8,10 +8,7 @@ $sql = "SELECT * FROM `customers` WHERE email='" . $email . "';";
 $result = requestDB($sql);
 
 if(sizeof($result) == 0){
-	echo "1"; // FIXME: back to 0
-	// echo $result;
-	echo sizeof($result);
-	echo $email;
+	echo "0";
 }
 else{
 	echo 1;
