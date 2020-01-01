@@ -97,14 +97,18 @@ $checkoutClient = new SquareConnect\Api\CheckoutApi($defaultApiClient);
 
 //Create a Money object to represent the price of the line item.
 $price = new \SquareConnect\Model\Money;
-$price->setAmount(6000);
+$price->setAmount(100 * $pot["price"]);
 $price->setCurrency('AUD');
 
 //Create the line item and set details
 $Product = new \SquareConnect\Model\CreateOrderRequestLineItem;
-$Product->setName('PRODUCT NAME');
+$Product->setName($pot["potName"]);
 $Product->setQuantity('1');
 $Product->setBasePriceMoney($price);
+$Product->setNote($orderNotes);
+
+//Prepopulate Address.
+$Address = new \SquareConnect\Model\
 
 //Puts our line item object in an array called lineItems.
 $lineItems = array();

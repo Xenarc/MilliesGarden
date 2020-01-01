@@ -10,6 +10,7 @@ var Mobile = false;
 var tabs = false
 var plantDescs = false
 var updateDetails = null;
+var usingGST = false;
 
 $(function()
 {
@@ -229,6 +230,22 @@ function buyButtonClicked(){
 	hidePlantDetails();
 	$(window).scrollTop($(".checkout").offset().top - 50);
 	$(".purchasePlantPreview").html($(".plantDetails").html());
+	
+	console.log($(".plantDetails").html());
+	var itemName = $(".plantDetails h2").html();
+	var delivery = 0;
+	var price = Number($(".plantDetails h3").html().replace(/[^0-9.-]+/g, ""));
+	
+	$("#item .lineItemPrice").html(itemName);
+	$("#itemPrice .lineItemPrice").html("$" + price.toFixed(2));
+	$("#delivery .lineItemPrice").html("$" + delivery.toFixed(2));
+	$("#subtotal .lineItemPrice").html("$" + (price + delivery).toFixed(2));
+	if(usingGST){
+		$("#gst .lineItemPrice").html("$" + (0.1 * (price + delivery)).toFixed(2));
+	}else{
+		$("#gst .lineItemPrice").html("$" + (0).toFixed(2));
+	}
+	$("#total .lineItemPrice").html("$" + (1.1 * (price + delivery)).toFixed(2));
 }
 
 function updateOrderPlants(){

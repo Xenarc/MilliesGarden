@@ -156,23 +156,26 @@
 							</div>
 							
 							<h3>Your Address</h3>
-							<div class="fieldGroup addressField tooltip" id="countryField">
-								<span class="tooltiptext">Address country: Australia</span><span class="fieldLabel">Country</span><input required name="country" type="text" placeholder="Australia">
+							<div class="fieldGroup addressField tooltip" id="streetField">
+								<span class="tooltiptext">Street address with number: 1 Succulent Lane</span><span class="fieldLabel">Street Address</span><input required name="streetAddress" type="text" placeholder="1 Succulent Lane">
+							</div>
+							<div class="fieldGroup addressField tooltip" id="cityField">
+								<span class="tooltiptext">Address city or town: Melbourne</span><span class="fieldLabel">City / Town</span><input required name="city" type="text" placeholder="Melbourne">
 							</div>
 							<div class="fieldGroup addressField tooltip" id="postcodeField">
 								<span class="tooltiptext">Address postcode: 3000</span><span class="fieldLabel">Postcode</span><input required name="postcode" type="number" placeholder="3000">
 							</div>
 							<div class="fieldGroup addressField tooltip" id="stateField">
-								<span class="tooltiptext">Adress state: Victoria</span><span class="fieldLabel">State</span><input required name="state" type="text" placeholder="Victoria">
+								<span class="tooltiptext">Adress state: Victoria</span><span class="fieldLabel">State</span><input required name="state" disabled value="Victoria" type="text" placeholder="Victoria">
 							</div>
-							<div class="fieldGroup addressField tooltip" id="cityField">
-								<span class="tooltiptext">Address city or town: Melbourne</span><span class="fieldLabel">City / Town</span><input required name="city" type="text" placeholder="Melbourne">
-							</div>
-							<div class="fieldGroup addressField tooltip" id="streetField">
-								<span class="tooltiptext">Street address with number: 1 Succulent Lane</span><span class="fieldLabel">Street Address</span><input required name="streetAddress" type="text" placeholder="1 Succulent Lane">
+							<div class="fieldGroup addressField tooltip" id="countryField">
+								<span class="tooltiptext">Address country: Australia</span><span class="fieldLabel">Country</span><input required name="country" disabled value="Australia" type="text" placeholder="Australia">
 							</div>
 							<div class="fieldGroup addressField tooltip" id="extraInfoField">
 								<span class="tooltiptext">Any extra address information such as apartment numbers or delivery notes</span><span class="fieldLabel">Extra Address Information</span><input name="extraAddressInfo" type="text" placeholder="">
+							</div>
+							<div class="fieldGroup tooltip" id="delivery">
+							<span class="tooltiptext">Whether the plant will be delivered or not</span><span class="fieldLabel">Delivery (Currently unavailable)</span><input type="checkbox" name="delivery" disabled>
 							</div>
 							
 							<h3>Your New Plant</h3>
@@ -181,9 +184,19 @@
 								<span class="tooltiptext">Any order notes, refer to above text</span><span class="fieldLabel">Notes</span><input rows="3" name="orderNotes" type="text" placeholder="">
 							</div>
 							
-							<div class="purchasePlantPreview"></div>
+							<div class="purchasePlantPreview shadow"></div>
 							<div id="disclaimer">
 								<p>*Disclaimer* Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil soluta odio at voluptatem quia, iste repudiandae eius recusandae a illum placeat commodi aliquam ratione beatae.</p>
+							</div>
+							<div class="lineItems shadow">
+								<h3>Order Summary</h3>
+								<div class="lineItem" id="item"><span class="lineItemLabel">Item</span><span class="lineItemPrice"></span></div>
+								<div class="lineItem" id="itemPrice"><span class="lineItemLabel">Pot and Arrangement Price</span><span class="lineItemPrice"></span></div>
+								<div class="lineItem" id="delivery"><span class="lineItemLabel">Delivery</span><span class="lineItemPrice"></span></div>
+								<div class="lineItem" id="subtotal"><span class="lineItemLabel">Subtotal</span><span class="lineItemPrice"></span></div><br>
+								<div class="lineItem" id="tax"><span class="lineItemLabel">Tax</span><span class="lineItemPrice"></span></div>
+								<div class="lineItem" id="gst"><span class="lineItemLabel">GST</span><span class="lineItemPrice"></span></div>
+								<div class="lineItem" id="total"><span class="lineItemLabel">Total</span><span class="lineItemPrice"></span></div><br>
 							</div>
 							<div class="completeCheckoutContainer">
 								<input name="orderSubmit" type="button" value="Order" class="completeCheckout"> <!-- Actually the submit button but without the overhead -->

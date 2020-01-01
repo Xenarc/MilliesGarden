@@ -892,6 +892,16 @@ footer a{
 	width: 100%;
 }
 
+#delivery input[type=checkbox]
+{
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  padding: 10px;
+	margin-top: 1.5em;
+}
 
 #countryField, #postcodeField, #stateField, #cityField{
 	width: 40%;
@@ -941,8 +951,8 @@ footer a{
 	margin: auto;
 	width: 25%;
 	overflow: hidden;
-	border: solid 1px #283226;
-	padding: 1%;
+	/* border: solid 1px #283226; */
+	padding: 5%;
 	background-color: #F8F8F8;
 }
 
@@ -978,6 +988,51 @@ footer a{
 	width: 10em;
 	text-align: center;
 	margin: 1.25% auto;
+}
+
+.lineItems{
+	padding: 5%;
+	background-color: #F8F8F8;
+	width: 80%;
+	margin: 2em auto 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.lineItem{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	border-bottom: #000000 1px dashed;
+}
+
+.lineItemLabel{
+	width: 50%;
+	padding-left: 1em;
+}
+
+.lineItemPrice{
+	width: 50%;
+	text-align: right;
+}
+
+#item{
+	border-bottom: #000000 1px solid;
+}
+
+#subtotal{
+	border-top: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+}
+
+#total{
+	border-top: #000000 1px solid;
+	border-bottom:none;
+}
+
+#total .lineItemLabel, #subtotal .lineItemLabel, #item .lineItemLabel, #tax .lineItemLabel{
+	padding-left: 0;
+	font-weight: bold;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
